@@ -25,7 +25,6 @@ jobs:
             git reset --hard
             git fetch
             git pull
-            cd Front
       - name: check_clonging
         uses: 8398a7/action-slack@v3
         with:
@@ -45,7 +44,8 @@ jobs:
           host: ${{ secrets.FRONT_DEV_HOST }}
           username: ${{ secrets.USER }}
           script: |
-            cd SugarFree/Front
+            cd bibim-web-ui
+            yarn install
             yarn build
       - name: check_Frontrebuilding
         uses: 8398a7/action-slack@v3
