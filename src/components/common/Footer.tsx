@@ -9,16 +9,12 @@
 //           <p>BiBiMBAP</p>
 
 //         </div>
-//         <div className='menu-shortcut'>
-
-//         </div>
+//         <div className='menu-shortcut'></div>
 //       </div>
-//       <div className='supports'>
-
-//       </div>
+//       <div className="supports"></div>
 //     </footer>
 //   );
-// };
+// }
 
 // export default Footer;
 export default {};
