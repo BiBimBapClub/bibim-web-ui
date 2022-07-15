@@ -6,31 +6,31 @@ const BiBimDiv = styled.div`
   background-color: #232327;
 `;
 
-const MenuDiv = styled.div`
-  color: white;
-  background-color: #232327;
-  display: flex;
-  &:hover {
-  }
-`;
+// const MenuDiv = styled.div`
+//   color: white;
+//   background-color: #232327;
+//   display: flex;
+//   &:hover {
+//   }
+// `;
 
 interface Props {
   children: React.ReactElement;
 }
 
 function WebContainer({ children }: Props): React.ReactElement {
-  const tabArr = ['홈', '동아리 소개', '동아리 활동', '후기', '정보 광장'];
+  // const tabArr = ['홈', '동아리 소개', '동아리 활동', '후기', '정보 광장'];
 
-  const menuItem = tabArr.map((menuName) => (
-    <div className="menu-item">{menuName}</div>
-  ));
+  // const menuItem = tabArr.map((menuName) => (
+  //   <div className="menu-item">{menuName}</div>
+  // ));
 
   return (
     <BiBimDiv>
-      <div id="menu">
+      {/* <div id="menu">
         <div className="logo">Logo</div>
         <MenuDiv>{menuItem}</MenuDiv>
-      </div>
+      </div> */}
       {children}
       {/* <Footer /> */}
     </BiBimDiv>
