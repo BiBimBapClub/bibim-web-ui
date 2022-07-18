@@ -1,6 +1,5 @@
 import React from 'react';
 import styled from 'styled-components';
-import 'antd/dist/antd.css';
 import { Col, Row } from 'antd';
 import logo from '../image/bibim_logo.png';
 
@@ -15,7 +14,15 @@ const FlexBox = styled.div`
   align-items: center;
   justify-content: center;
 `;
-const NavCol = styled(Col)``;
+const NavCol = styled(Col)`
+  &:hover,
+  &:focus {
+    backgound-color: #ffffff;
+    color: #eeeeee;
+  }
+  .
+  .
+`;
 const NavRow = styled(Row)`
   width: 100%;
 `;
@@ -27,7 +34,7 @@ function Nav(): React.ReactElement {
         <NavCol span={1}>
           <img src={logo} alt="" />
         </NavCol>
-        <NavCol span={3} offset={4}>
+        <NavCol span={3} offset={8}>
           홈
         </NavCol>
         <NavCol span={3}>동아리 소개</NavCol>

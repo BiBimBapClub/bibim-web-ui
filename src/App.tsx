@@ -1,7 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
 import { Row, Col } from 'antd';
-import 'antd/dist/antd.css';
 import Nav from './components/common/Nav';
 import './globalStyle.css';
 import ContentPage from './pages/Content';
