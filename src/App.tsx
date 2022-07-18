@@ -31,10 +31,9 @@ function App(): React.ReactElement {
           <Col span={16}>col-16</Col>
         </Row> */}
         <Row justify="center">
-          <AppNav span={20}>
+          <AppNav span={24}>
             <Nav />
           </AppNav>
-          <AppNav span={4}> </AppNav>
         </Row>
         <Row justify="center">
           <Content span={22}>

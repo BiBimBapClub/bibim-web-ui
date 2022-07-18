@@ -6,7 +6,7 @@ function Content(): React.ReactElement {
 
   return (
     <WrapContainer>
-      <div>Hello</div>
+      <div>{null}</div>
     </WrapContainer>
   );
 }
