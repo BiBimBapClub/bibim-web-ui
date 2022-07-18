@@ -21,6 +21,7 @@ const AppNav = styled(Col)`
 `;
 const Content = styled(Col)`
   display: flex;
+  width: 100vw;
 `;
 function App(): React.ReactElement {
   return (
