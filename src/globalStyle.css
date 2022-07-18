@@ -2,6 +2,7 @@
   font-family: 'LetKO';
   src: url('./fonts/Recipekorea\ 레코체\ FONT.ttf');
 }
+@import '~antd/dist/antd.css';
 #root {
   margin: 0;
   width: 100vw;
