@@ -1,10 +1,16 @@
-import React from 'react';
-import styled from 'styled-components';
+import React, { useState } from 'react';
+import styled, { createGlobalStyle } from 'styled-components';
 import { Row, Col } from 'antd';
 import Nav from './components/common/Nav';
 import './globalStyle.css';
-import ContentPage from './pages/Content';
+import HomeContent from './pages/HomeContent';
+import Footer from './components/common/Footer';
 
+const GlobalStyle = createGlobalStyle`
+  body{
+    padding: 0;
+    margin 0;
+  }`;
 const BackGround = styled.div`
   background-color: #232327;
   padding 0 0 0 0;
@@ -19,13 +25,16 @@ const BackGround = styled.div`
 const AppNav = styled(Col)`
   width: 100vw;
 `;
-const Content = styled(Col)`
+const ContentCol = styled(Col)`
   display: flex;
   width: 100vw;
 `;
+
 function App(): React.ReactElement {
+  const [content, setContent] = useState(<HomeContent />);
   return (
     <div>
+      <GlobalStyle />
       <BackGround>
         {/* <Row>
           <Col span={8}>col-8</Col>
@@ -33,13 +42,16 @@ function App(): React.ReactElement {
         </Row> */}
         <Row justify="center">
           <AppNav span={24}>
-            <Nav />
+            <Nav setContent={setContent} />
           </AppNav>
         </Row>
         <Row justify="center">
-          <Content span={22}>
-            <ContentPage />
-          </Content>
+          <ContentCol span={22}>{content}</ContentCol>
+        </Row>
+        <Row justify="center">
+          <ContentCol span={22}>
+            <Footer />
+          </ContentCol>
         </Row>
       </BackGround>
     </div>

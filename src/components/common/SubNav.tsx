@@ -7,57 +7,54 @@ const SubNavCol = styled(Col)`
   &:focus {
     background-color: #000000;
     color: #eeeeee;
+    cursor: pointer;
   }
   background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   color: black;
-  font-size : 12px;
+  font-size : 18px;
   text-align : center;
   .
   .
 `;
 const SubNavRow = styled(Row)`
   width: 100vw;
+  height: 50px;
 `;
 interface Props {
   number: number;
 }
 
 function SubNav({ number }: Props): React.ReactElement {
-  if (number === 1) {
-    console.log(number);
-    return (
-      <SubNavRow>
-        <SubNavCol span={24}>11111111111</SubNavCol>
-      </SubNavRow>
-    );
+  const subArr = [
+    ['동아리 연혁', '조직도', '활동소개', '명예의 전당'],
+    ['스터디', '프로젝트'],
+    ['후기내용'],
+    ['자료실', 'Q&A', '대회 정보'],
+  ];
+  let subLen = 0;
+  let colSpan = 0;
+  let subMenu;
+  if (number > 1) {
+    subLen = subArr[number - 2].length;
+    colSpan = 24 / subLen;
+    subMenu = subArr[number - 2].map((subName) => (
+      <SubNavCol span={colSpan}>{subName}</SubNavCol>
+    ));
   }
   if (number === 2) {
-    return (
-      <SubNavRow>
-        <SubNavCol span={24}>222222222222</SubNavCol>
-      </SubNavRow>
-    );
+    return <SubNavRow>{subMenu}</SubNavRow>;
   }
   if (number === 3) {
-    return (
-      <SubNavRow>
-        <SubNavCol span={24}>3333333333333</SubNavCol>
-      </SubNavRow>
-    );
+    return <SubNavRow>{subMenu}</SubNavRow>;
   }
   if (number === 4) {
-    return (
-      <SubNavRow>
-        <SubNavCol span={24}>444444444444</SubNavCol>
-      </SubNavRow>
-    );
+    return <SubNavRow>{subMenu}</SubNavRow>;
   }
   if (number === 5) {
-    return (
-      <SubNavRow>
-        <SubNavCol span={24}>5555555555555555</SubNavCol>
-      </SubNavRow>
-    );
+    return <SubNavRow>{subMenu}</SubNavRow>;
   }
   return <span />;
 }
