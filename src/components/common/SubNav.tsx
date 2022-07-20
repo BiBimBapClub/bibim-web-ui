@@ -14,10 +14,8 @@ const SubNavCol = styled(Col)`
   align-items: center;
   justify-content: center;
   color: black;
-  font-size : 18px;
-  text-align : center;
-  .
-  .
+  font-size: 18px;
+  text-align: center;
 `;
 const SubNavRow = styled(Row)`
   width: 100vw;

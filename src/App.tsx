@@ -3,21 +3,20 @@ import styled, { createGlobalStyle } from 'styled-components';
 import { Row, Col } from 'antd';
 import Nav from './components/common/Nav';
 import './globalStyle.css';
-import HomeContent from './pages/HomeContent';
+import HomeContent from './pages/Home/HomeContent';
 import Footer from './components/common/Footer';
 
 const GlobalStyle = createGlobalStyle`
   body{
     padding: 0;
-    margin 0;
+    margin: 0;
   }`;
 const BackGround = styled.div`
   background-color: #232327;
-  padding 0 0 0 0;
-  margin 0 0 0 0;
-  display : block;
-  width: 100%;
-  height: 100vh;
+  padding: 0 0 0 0;
+  margin: 0 0 0 0;
+  display: block;
+  width: 100vw;
   font-family: 'LetKO';
   color: white;
 `;
@@ -50,7 +49,7 @@ function App(): React.ReactElement {
         </Row>
         <Row justify="center">
           <ContentCol span={22}>
-            <Footer />
+            <Footer setContent={setContent} />
           </ContentCol>
         </Row>
       </BackGround>

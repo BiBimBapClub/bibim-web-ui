@@ -1,12 +1,20 @@
 import React from 'react';
-import WrapContainer from '../components/common/WebContainer';
+import styled from 'styled-components';
 
+const ContentDiv = styled.div`
+  width: 100%;
+  height: 500px;
+  display: flex;
+  margin-left: 50px;
+  margin-top: 200px;
+  flex-direction: column;
+`;
 function ActiveContent(): React.ReactElement {
   // 여기서 페이지 변경하는 로직 만들면 되지 않을까
   return (
-    <WrapContainer>
+    <ContentDiv>
       <div>동아리 활동</div>
-    </WrapContainer>
+    </ContentDiv>
   );
 }
 

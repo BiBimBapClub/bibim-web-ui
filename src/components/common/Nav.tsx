@@ -3,11 +3,11 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 import logo from '../image/bibim_logo.png';
 import SubNav from './SubNav';
-import HomeContent from '../../pages/HomeContent';
-import ActiveContent from '../../pages/ActiveContent';
-import ForumContent from '../../pages/ForumContent';
-import IntroductionContent from '../../pages/IntroductionContent';
-import ReviewContent from '../../pages/ReviewContent';
+import HomeContent from '../../pages/Home/HomeContent';
+import ActiveContent from '../../pages/Activity/ActiveContent';
+import ForumContent from '../../pages/InfoForum/ForumContent';
+import IntroductionContent from '../../pages/Introduction/IntroductionContent';
+import ReviewContent from '../../pages/Review/ReviewContent';
 
 const FlexBox = styled.div`
   margin: 0 0 0 0;
