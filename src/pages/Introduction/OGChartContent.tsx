@@ -9,11 +9,17 @@ const ContentDiv = styled.div`
   margin-top: 200px;
   flex-direction: column;
 `;
+const PageTitle = styled.div`
+  align-self: center;
+  padding-bottom: 40px;
+  font-size: 100px;
+  color: #00ff80;
+`;
 function OGChartContent(): React.ReactElement {
   // 여기서 페이지 변경하는 로직 만들면 되지 않을까
   return (
     <ContentDiv>
-      <div>동아리 소개</div>
+      <PageTitle>조직도</PageTitle>
     </ContentDiv>
   );
 }
