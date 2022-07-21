@@ -2,8 +2,8 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import styled from 'styled-components';
 import HomeContent from '../../pages/Home/HomeContent';
-import ActiveContent from '../../pages/Activity/ActiveContent';
-import ForumContent from '../../pages/InfoForum/ForumContent';
+import ActiveContent from '../../pages/Activity/StudyContent';
+import ForumContent from '../../pages/InfoForum/ArchiveContent';
 import IntroductionContent from '../../pages/Introduction/IntroductionContent';
 import ReviewContent from '../../pages/Review/ReviewContent';
 

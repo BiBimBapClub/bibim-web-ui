@@ -15,13 +15,13 @@ const PageTitle = styled.div`
   font-size: 100px;
   color: #00ff80;
 `;
-function ReviewContent(): React.ReactElement {
+function StudyContent(): React.ReactElement {
   // 여기서 페이지 변경하는 로직 만들면 되지 않을까
   return (
     <ContentDiv>
-      <PageTitle>후기</PageTitle>
+      <PageTitle>스터디</PageTitle>
     </ContentDiv>
   );
 }
 
-export default ReviewContent;
+export default StudyContent;

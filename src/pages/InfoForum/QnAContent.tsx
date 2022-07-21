@@ -9,13 +9,19 @@ const ContentDiv = styled.div`
   margin-top: 200px;
   flex-direction: column;
 `;
-function ForumContent(): React.ReactElement {
+const PageTitle = styled.div`
+  align-self: center;
+  padding-bottom: 40px;
+  font-size: 100px;
+  color: #00ff80;
+`;
+function QnAContent(): React.ReactElement {
   // 여기서 페이지 변경하는 로직 만들면 되지 않을까
   return (
     <ContentDiv>
-      <div>정보광장</div>
+      <PageTitle>Q&A</PageTitle>
     </ContentDiv>
   );
 }
 
-export default ForumContent;
+export default QnAContent;
