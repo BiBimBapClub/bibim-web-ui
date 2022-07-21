@@ -11,9 +11,16 @@ const ContentDiv = styled.div`
   align-content: center;
   justify-content: center;
 `;
+const PageTitle = styled.div`
+  align-self: center;
+  padding-bottom: 40px;
+  font-size: 100px;
+  color: #00ff80;
+`;
 const WhiteLine = styled.span`
-  width: 100%;
+  width: 95%;
   height: 10px;
+  margin-top: 200px;
   border-color: white;
   border-radius: 4px;
   background-color: white;
@@ -49,6 +56,7 @@ function IntroductionContent(): React.ReactElement {
   // 여기서 페이지 변경하는 로직 만들면 되지 않을까
   return (
     <ContentDiv>
+      <PageTitle>동아리 연혁</PageTitle>
       <WhiteLine />
       <YearSpace>
         <YearText>hihi</YearText>

@@ -4,8 +4,8 @@ import { Col, Row } from 'antd';
 import logo from '../image/bibim_logo.png';
 import SubNav from './SubNav';
 import HomeContent from '../../pages/Home/HomeContent';
-import ActiveContent from '../../pages/Activity/ActiveContent';
-import ForumContent from '../../pages/InfoForum/ForumContent';
+import StudyContent from '../../pages/Activity/StudyContent';
+import ArchiveContent from '../../pages/InfoForum/ArchiveContent';
 import IntroductionContent from '../../pages/Introduction/IntroductionContent';
 import ReviewContent from '../../pages/Review/ReviewContent';
 
@@ -54,21 +54,24 @@ interface Props {
 
 function Nav({ setContent }: Props): React.ReactElement {
   const [checkHovering, setCheckHovering] = useState(0);
-  const [subBar, setSubBar] = useState(<SubNav number={checkHovering} />);
+  const [subBar, setSubBar] = useState(
+    <SubNav number={checkHovering} setContent={setContent} />,
+  );
   const [checkSubHov, setCheckSubHov] = useState(0);
+
   useEffect(() => {
     if (checkHovering === 1) {
-      setSubBar(<SubNav number={checkHovering} />);
+      setSubBar(<SubNav number={checkHovering} setContent={setContent} />);
     } else if (checkHovering === 2) {
-      setSubBar(<SubNav number={checkHovering} />);
+      setSubBar(<SubNav number={checkHovering} setContent={setContent} />);
     } else if (checkHovering === 3) {
-      setSubBar(<SubNav number={checkHovering} />);
+      setSubBar(<SubNav number={checkHovering} setContent={setContent} />);
     } else if (checkHovering === 4) {
-      setSubBar(<SubNav number={checkHovering} />);
+      setSubBar(<SubNav number={checkHovering} setContent={setContent} />);
     } else if (checkHovering === 5) {
-      setSubBar(<SubNav number={checkHovering} />);
+      setSubBar(<SubNav number={checkHovering} setContent={setContent} />);
     } else {
-      setSubBar(<SubNav number={checkHovering} />);
+      setSubBar(<SubNav number={checkHovering} setContent={setContent} />);
     }
   }, [checkHovering]);
   return (
@@ -115,7 +118,7 @@ function Nav({ setContent }: Props): React.ReactElement {
               setCheckSubHov(3);
             }}
             onClick={() => {
-              setContent(<ActiveContent />);
+              setContent(<StudyContent />);
             }}
           >
             동아리 활동
@@ -139,7 +142,7 @@ function Nav({ setContent }: Props): React.ReactElement {
               setCheckSubHov(5);
             }}
             onClick={() => {
-              setContent(<ForumContent />);
+              setContent(<ArchiveContent />);
             }}
           >
             정보 광장
