@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 import StudyContent from '../../pages/Activity/StudyContent';
 import ProjectContent from '../../pages/Activity/ProjectContent';
-import ForumContent from '../../pages/InfoForum/ArchiveContent';
+import ArchiveContent from '../../pages/InfoForum/ArchiveContent';
 import ContestContent from '../../pages/InfoForum/ContestContent';
 import QnAContent from '../../pages/InfoForum/QnAContent';
 import IntroductionContent from '../../pages/Introduction/IntroductionContent';
@@ -52,7 +52,7 @@ function SubNav({ number, setContent }: Props): React.ReactElement {
     ],
     [<StudyContent />, <ProjectContent />],
     [<ReviewContent />],
-    [<ForumContent />, <ContestContent />, <QnAContent />],
+    [<ArchiveContent />, <ContestContent />, <QnAContent />],
   ];
   let subLen = 0;
   let colSpan = 0;
