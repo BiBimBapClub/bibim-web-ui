@@ -2,9 +2,15 @@ import React from 'react';
 import { Row, Col } from 'antd';
 import styled from 'styled-components';
 import HomeContent from '../../pages/Home/HomeContent';
-import ActiveContent from '../../pages/Activity/StudyContent';
-import ForumContent from '../../pages/InfoForum/ArchiveContent';
+import StudyContent from '../../pages/Activity/StudyContent';
+import ProjectContent from '../../pages/Activity/ProjectContent';
+import ArchiveContent from '../../pages/InfoForum/ArchiveContent';
+import ContestContent from '../../pages/InfoForum/ContestContent';
+import QnAContent from '../../pages/InfoForum/QnAContent';
 import IntroductionContent from '../../pages/Introduction/IntroductionContent';
+import ActivityIntroductionContent from '../../pages/Introduction/ActivityIntroductionContent';
+import HonorOfBBBContent from '../../pages/Introduction/HonorOfBBBContent';
+import OGChargContent from '../../pages/Introduction/OGChartContent';
 import ReviewContent from '../../pages/Review/ReviewContent';
 
 const FooterBox = styled.div`
@@ -45,6 +51,7 @@ const MenuTitle = styled.div`
   height: 40px;
   width: 70px;
   font-size: 11px;
+  cursor: pointer;
   font-weight: Bold;
 `;
 const MenuDiv = styled.div`
@@ -52,6 +59,7 @@ const MenuDiv = styled.div`
   width: 70px;
   font-weight: lighter;
   text-decoration: underline;
+  cursor: pointer;
 `;
 interface Props {
   setContent: React.Dispatch<React.SetStateAction<JSX.Element>>;
@@ -64,9 +72,30 @@ function Footer({ setContent }: Props): React.ReactElement {
     ['후기내용'],
     ['자료실', 'Q&A', '대회 정보'],
   ];
+  const clickSubArr = [
+    [
+      <IntroductionContent />,
+      <OGChargContent />,
+      <ActivityIntroductionContent />,
+      <HonorOfBBBContent />,
+    ],
+    [<StudyContent />, <ProjectContent />],
+    [<ReviewContent />],
+    [<ArchiveContent />, <ContestContent />, <QnAContent />],
+  ];
   const Menu = [];
   for (let i = 0; i < menuArr.length; i += 1) {
-    Menu.push(menuArr[i].map((menuName) => <MenuDiv>{menuName}</MenuDiv>));
+    Menu.push(
+      menuArr[i].map((menuName, index) => (
+        <MenuDiv
+          onClick={() => {
+            setContent(clickSubArr[i][index]);
+          }}
+        >
+          {menuName}
+        </MenuDiv>
+      )),
+    );
   }
   return (
     <FooterBox>
@@ -96,7 +125,7 @@ function Footer({ setContent }: Props): React.ReactElement {
         <SummaryCol span={2}>
           <MenuTitle
             onClick={() => {
-              setContent(<ActiveContent />);
+              setContent(<StudyContent />);
             }}
           >
             동아리 활동
@@ -116,7 +145,7 @@ function Footer({ setContent }: Props): React.ReactElement {
         <SummaryCol span={2}>
           <MenuTitle
             onClick={() => {
-              setContent(<ForumContent />);
+              setContent(<ArchiveContent />);
             }}
           >
             정보광장
