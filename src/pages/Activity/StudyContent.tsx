@@ -1,26 +1,16 @@
 import React from 'react';
-import styled from 'styled-components';
+// import styled from 'styled-components';
+import ContentWrapper from '../../components/common/ContentWrapper';
 
-const ContentDiv = styled.div`
-  width: 100%;
-  height: 500px;
-  display: flex;
-  margin-left: 50px;
-  margin-top: 200px;
-  flex-direction: column;
-`;
-const PageTitle = styled.div`
-  align-self: center;
-  padding-bottom: 40px;
-  font-size: 100px;
-  color: #00ff80;
-`;
 function StudyContent(): React.ReactElement {
   // 여기서 페이지 변경하는 로직 만들면 되지 않을까
   return (
-    <ContentDiv>
-      <PageTitle>스터디</PageTitle>
-    </ContentDiv>
+    <ContentWrapper
+      title="스터디"
+      subTitle="분야 별로 튜터와 함께 성장해 나가요"
+    >
+      <div>hello</div>
+    </ContentWrapper>
   );
 }
 
