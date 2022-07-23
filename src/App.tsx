@@ -17,6 +17,8 @@ const BackGround = styled.div`
   margin: 0 0 0 0;
   display: block;
   width: 100vw;
+  height: 100vh;
+  overflow: auto;
   font-family: 'LetKO';
   color: white;
 `;
@@ -27,6 +29,7 @@ const AppNav = styled(Col)`
 const ContentCol = styled(Col)`
   display: flex;
   width: 100vw;
+  height: 100%;
 `;
 
 function App(): React.ReactElement {
