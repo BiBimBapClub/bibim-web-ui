@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 const ContentDiv = styled.div`
   width: 100%;
-  height: 500px;
+  height: 100%;
   display: flex;
   margin-left: 50px;
   margin-top: 200px;
@@ -11,7 +11,7 @@ const ContentDiv = styled.div`
 `;
 const PageTitle = styled.div`
   align-self: center;
-  padding-bottom: 20px;
+  height: 100%;
   font-size: 100px;
   color: #00ff80;
 `;
@@ -19,6 +19,7 @@ const SubTitle = styled.div`
   font-size: 24px;
   align-self: center;
   color: white;
+  margin-bottom: 50px;
 `;
 
 interface Props {
