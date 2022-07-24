@@ -1,26 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import ContentWrapper from '../../components/common/ContentWrapper';
 
-const ContentDiv = styled.div`
-  width: 100%;
-  height: 500px;
-  display: flex;
-  margin-left: 50px;
-  margin-top: 200px;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-`;
-const PageTitle = styled.div`
-  align-self: center;
-  padding-bottom: 40px;
-  font-size: 100px;
-  color: #00ff80;
-`;
 const WhiteLine = styled.span`
-  width: 95%;
+  width: 100%;
   height: 10px;
-  margin-top: 200px;
+  margin-top: 420px;
   border-color: white;
   border-radius: 4px;
   background-color: white;
@@ -55,15 +40,16 @@ const YearNum = styled.div`
 function IntroductionContent(): React.ReactElement {
   // 여기서 페이지 변경하는 로직 만들면 되지 않을까
   return (
-    <ContentDiv>
-      <PageTitle>동아리 연혁</PageTitle>
-      <WhiteLine />
-      <YearSpace>
-        <YearText>hihi</YearText>
-        <YearNum>2010</YearNum>
-        <YearText />
-      </YearSpace>
-    </ContentDiv>
+    <ContentWrapper title="동아리 연혁" subTitle="">
+      <>
+        <WhiteLine />
+        <YearSpace>
+          <YearText>hihi</YearText>
+          <YearNum>2010</YearNum>
+          <YearText />
+        </YearSpace>
+      </>
+    </ContentWrapper>
   );
 }
 

@@ -5,9 +5,8 @@ const ContentDiv = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
-  margin-left: 50px;
-  margin-top: 200px;
   flex-direction: column;
+  margin-top: 100px;
 `;
 const PageTitle = styled.div`
   align-self: center;
