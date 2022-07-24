@@ -27,4 +27,24 @@ export const CardGrid = styled.div`
   grid-gap: 64px;
   grid-template-columns: repeat(4, 1fr);
   grid-auto-rows: minmax(270px, auto);
+  place-items: center;
+`;
+
+export const DetailTemplateDiv = styled.div`
+  width: 100%;
+  margin-top: 100px;
+`;
+
+export const DetailRouteP = styled.p`
+  width: 100%;
+  font-size: 24px;
+`;
+
+export const DetailInnerDiv = styled.div`
+  background-color: #424242;
+  color: white;
+  width: 100%;
+  border-radius: 20px;
+  padding 45px;
+  margin-bottom : 100px;
 `;
