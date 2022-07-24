@@ -8,6 +8,7 @@ interface Props {
   pageType: 'study' | 'project';
   field?: string;
   teamLeaderName?: string;
+  teamName?: string;
   tutorName?: string;
   usedStack?: string | string[];
   onClick: React.MouseEventHandler<HTMLDivElement>;
@@ -50,7 +51,10 @@ const UpperRightP = styled.p`
 
 const CardTitleP = styled.p`
   margin: 0;
+  display: block;
   width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
   font-size: 36px;
 `;
 
@@ -84,6 +88,7 @@ function CardTemplate({
   teamLeaderName,
   tutorName,
   usedStack,
+  teamName,
   onClick,
 }: Props): React.ReactElement {
   return (
@@ -95,7 +100,9 @@ function CardTemplate({
         </UpperRightP>
       </CardUpperDiv>
       <CardInfoDiv>
-        <CardWeekP>{`${week}주차`}</CardWeekP>
+        <CardWeekP>
+          {pageType === 'study' ? `${week}주차` : `${teamName}`}
+        </CardWeekP>
         <CardTitleP>{cardName}</CardTitleP>
       </CardInfoDiv>
       <CardFooterDiv>
@@ -112,6 +119,7 @@ CardTemplate.defaultProps = {
   teamLeaderName: '',
   tutorName: '',
   usedStack: '',
+  teamName: '',
 };
 
 export default CardTemplate;

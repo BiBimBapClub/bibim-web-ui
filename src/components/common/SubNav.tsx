@@ -52,7 +52,7 @@ function SubNav({ number, setContent }: Props): React.ReactElement {
     ],
     [<StudyContent />, <ProjectContent />],
     [<ReviewContent />],
-    [<ArchiveContent />, <ContestContent />, <QnAContent />],
+    [<ArchiveContent />, <QnAContent />, <ContestContent />],
   ];
   let subLen = 0;
   let colSpan = 0;

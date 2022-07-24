@@ -1,5 +1,5 @@
+/* eslint-disable no-console */
 import React, { ChangeEventHandler, useState } from 'react';
-// import styled from 'styled-components';
 import ContentWrapper from '../../components/common/ContentWrapper';
 import Dropdown from '../../components/common/Dropdown';
 import CardTemplate from './detail/CardTemplate';
