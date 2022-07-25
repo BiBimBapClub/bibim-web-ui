@@ -57,7 +57,7 @@ function Nav({ setContent }: Props): React.ReactElement {
   const [subBar, setSubBar] = useState(
     <SubNav number={checkHovering} setContent={setContent} />,
   );
-  const [checkSubHov, setCheckSubHov] = useState(0);
+  // const [checkSubHov, setCheckSubHov] = useState(0);
 
   useEffect(() => {
     if (checkHovering === 1) {
@@ -91,7 +91,6 @@ function Nav({ setContent }: Props): React.ReactElement {
             offset={8}
             onMouseOver={() => {
               setCheckHovering(1);
-              setCheckSubHov(1);
             }}
             onClick={() => {
               setContent(<HomeContent />);
@@ -103,7 +102,6 @@ function Nav({ setContent }: Props): React.ReactElement {
             span={3}
             onMouseOver={() => {
               setCheckHovering(2);
-              setCheckSubHov(2);
             }}
             onClick={() => {
               setContent(<IntroductionContent />);
@@ -115,7 +113,6 @@ function Nav({ setContent }: Props): React.ReactElement {
             span={3}
             onMouseOver={() => {
               setCheckHovering(3);
-              setCheckSubHov(3);
             }}
             onClick={() => {
               setContent(<StudyContent />);
@@ -127,7 +124,6 @@ function Nav({ setContent }: Props): React.ReactElement {
             span={3}
             onMouseOver={() => {
               setCheckHovering(4);
-              setCheckSubHov(4);
             }}
             onClick={() => {
               setContent(<ReviewContent />);
@@ -139,7 +135,6 @@ function Nav({ setContent }: Props): React.ReactElement {
             span={3}
             onMouseOver={() => {
               setCheckHovering(5);
-              setCheckSubHov(5);
             }}
             onClick={() => {
               setContent(<ArchiveContent />);
@@ -149,13 +144,12 @@ function Nav({ setContent }: Props): React.ReactElement {
           </NavCol>
         </NavRow>
       </FlexBox>
-      <div
-        onMouseOver={() => setCheckHovering(checkSubHov)}
-        onFocus={() => 0}
-        onMouseOut={() => setCheckHovering(0)}
-        onBlur={() => 0}
-      >
-        <SubRow justify="start">
+      <div>
+        <SubRow
+          justify="start"
+          onMouseLeave={() => setCheckHovering(0)}
+          onBlur={() => 0}
+        >
           <SubCol span={24}>{subBar}</SubCol>
         </SubRow>
       </div>
