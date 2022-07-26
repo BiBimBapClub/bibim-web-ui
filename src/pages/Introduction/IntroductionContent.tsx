@@ -1,26 +1,11 @@
 import React from 'react';
 import styled from 'styled-components';
+import ContentWrapper from '../../components/common/ContentWrapper';
 
-const ContentDiv = styled.div`
-  width: 100%;
-  height: 500px;
-  display: flex;
-  margin-left: 50px;
-  margin-top: 200px;
-  flex-direction: column;
-  align-content: center;
-  justify-content: center;
-`;
-const PageTitle = styled.div`
-  align-self: center;
-  padding-bottom: 40px;
-  font-size: 100px;
-  color: #00ff80;
-`;
 const WhiteLine = styled.span`
-  width: 95%;
+  width: 100%;
   height: 10px;
-  margin-top: 200px;
+  margin-top: 420px;
   border-color: white;
   border-radius: 4px;
   background-color: white;
@@ -116,6 +101,7 @@ function IntroductionContent(): React.ReactElement {
       <WhiteLine />
       <YearTotalFlex>{YearDivArr}</YearTotalFlex>
     </ContentDiv>
+
   );
 }
 

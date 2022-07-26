@@ -62,6 +62,7 @@ function OGChartContent(): React.ReactElement {
         <SelectorCol span={9} />
       </SelectorRow>
     </ContentDiv>
+
   );
 }
 
