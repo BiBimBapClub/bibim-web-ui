@@ -1,21 +1,8 @@
 import React from 'react';
 import { Row, Col, Select, Button } from 'antd';
 import styled from 'styled-components';
+import ContentWrapper from '../../components/common/ContentWrapper';
 
-const ContentDiv = styled.div`
-  width: 100%;
-  height: 500px;
-  display: flex;
-  margin-left: 50px;
-  margin-top: 200px;
-  flex-direction: column;
-`;
-const PageTitle = styled.div`
-  align-self: center;
-  padding-bottom: 40px;
-  font-size: 100px;
-  color: #00ff80;
-`;
 const CommonRow = styled(Row)`
   width: 100%;
 `;
@@ -39,8 +26,7 @@ const { Option } = Select;
 function OGChartContent(): React.ReactElement {
   // 여기서 페이지 변경하는 로직 만들면 되지 않을까
   return (
-    <ContentDiv>
-      <PageTitle>조직도</PageTitle>
+    <ContentWrapper title="조직도" subTitle="">
       <SelectorRow>
         <SelectorCol span={4}>
           <Select
@@ -58,11 +44,9 @@ function OGChartContent(): React.ReactElement {
           <ButtonAll type="primary">전체</ButtonAll>
           <ButtonYear>2022</ButtonYear>
         </SelectorCol>
-
         <SelectorCol span={9} />
       </SelectorRow>
-    </ContentDiv>
-
+    </ContentWrapper>
   );
 }
 
