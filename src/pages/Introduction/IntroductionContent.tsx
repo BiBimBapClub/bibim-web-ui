@@ -96,12 +96,12 @@ function IntroductionContent(): React.ReactElement {
     }
   }
   return (
-    <ContentDiv>
-      <PageTitle>동아리 연혁</PageTitle>
-      <WhiteLine />
-      <YearTotalFlex>{YearDivArr}</YearTotalFlex>
-    </ContentDiv>
-
+    <ContentWrapper title="동아리소개" subTitle="비빔밥 소개">
+      <>
+        <WhiteLine />
+        <YearTotalFlex>{YearDivArr}</YearTotalFlex>
+      </>
+    </ContentWrapper>
   );
 }
 
