@@ -97,6 +97,7 @@ function IntroductionContent(): React.ReactElement {
   }
   return (
     <ContentWrapper title="동아리소개" subTitle="비빔밥 소개">
+
       <>
         <WhiteLine />
         <YearTotalFlex>{YearDivArr}</YearTotalFlex>

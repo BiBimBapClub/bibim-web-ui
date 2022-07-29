@@ -2,6 +2,7 @@ import React, { ChangeEventHandler, useState } from 'react';
 import { Row, Col, Button } from 'antd';
 import styled from 'styled-components';
 import Dropdown from '../../components/common/Dropdown';
+
 import ContentWrapper from '../../components/common/ContentWrapper';
 
 const CommonRow = styled(Row)`
@@ -99,6 +100,7 @@ function OGChartContent(): React.ReactElement {
           </CommonCol>
         </CommonRow>
       </>
+
     </ContentWrapper>
   );
 }
