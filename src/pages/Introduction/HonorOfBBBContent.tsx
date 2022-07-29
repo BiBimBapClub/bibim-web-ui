@@ -1,15 +1,95 @@
-import React from 'react';
-// import styled from 'styled-components';
+import React, { ChangeEventHandler, useState } from 'react';
+import { Row, Col, Button } from 'antd';
+import styled from 'styled-components';
+import Dropdown from '../../components/common/Dropdown';
 import ContentWrapper from '../../components/common/ContentWrapper';
 
+const CommonRow = styled(Row)`
+  width: 100%;
+`;
+const CommonCol = styled(Col)`
+  width: 100%;
+`;
+const BtnRow = styled(CommonRow)``;
+const BtnCol = styled(CommonCol)``;
+
+const YearDropDown = styled(Dropdown)`
+  margin: 0 0 0 0;
+`;
+
+const ButtonAll = styled(Button)`
+  margin: 0 0 0 0;
+  width: 155px;
+  height: 55px;
+  background-color: #00ff80;
+  color: white;
+  border-radius: 30px;
+  text-align: center;
+`;
+const ButtonYear = styled(Button)`
+  margin-left: 130px;
+  width: 155px;
+  height: 55px;
+  background-color: #00ff80;
+  color: white;
+  border-radius: 30px;
+  text-align: center;
+`;
+const HonorBox = styled.div`
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  width: 301px;
+  height: 501px;
+`;
 function HonorOfBBBContent(): React.ReactElement {
   // 여기서 페이지 변경하는 로직 만들면 되지 않을까
+
+  const yearList = ['전체', '2020', '2021', '2022'];
+  const [currentSelectYear, setCurrentSelectYear] = useState('');
+
+  const handleOnChangeYear: ChangeEventHandler<HTMLSelectElement> = (e) => {
+    const { target } = e;
+    console.log(currentSelectYear);
+    if (target.value === '전체') {
+      setCurrentSelectYear('');
+    } else {
+      setCurrentSelectYear(target.value);
+    }
+  };
   return (
     <ContentWrapper
       title="명예의 전당"
       subTitle="학기 별 우수 활동 인원을 소개합니다"
     >
-      <div>hello</div>
+      <>
+        <BtnRow>
+          <BtnCol span={4}>
+            <YearDropDown
+              dropdownList={yearList}
+              onChange={handleOnChangeYear}
+            />
+          </BtnCol>
+          <BtnCol span={8} offset={5}>
+            <ButtonAll type="primary">전체</ButtonAll>
+            <ButtonYear>2022</ButtonYear>
+          </BtnCol>
+          <BtnCol span={9} />
+        </BtnRow>
+        <CommonRow>
+          <CommonCol>
+            <HonorBox>
+              <h3>스터디</h3>
+              <div />
+              <h5>컴퓨터공학과</h5>
+              <h2>이름</h2>
+              <h6>전화번호</h6>
+              <h6>전화번호</h6>
+              <h6>전화번호</h6>
+            </HonorBox>
+          </CommonCol>
+        </CommonRow>
+      </>
     </ContentWrapper>
   );
 }
