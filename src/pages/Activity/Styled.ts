@@ -45,6 +45,6 @@ export const DetailInnerDiv = styled.div`
   color: white;
   width: 100%;
   border-radius: 20px;
-  padding 45px;
-  margin-bottom : 100px;
+  padding: 45px;
+  margin-bottom: 100px;
 `;

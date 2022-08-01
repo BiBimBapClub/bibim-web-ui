@@ -100,7 +100,6 @@ function OGChartContent(): React.ReactElement {
           </CommonCol>
         </CommonRow>
       </>
-
     </ContentWrapper>
   );
 }
