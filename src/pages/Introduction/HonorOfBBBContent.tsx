@@ -1,6 +1,7 @@
 import React, { ChangeEventHandler, useState } from 'react';
 import { Row, Col, Button } from 'antd';
 import styled from 'styled-components';
+import Slider from 'react-slick';
 import Dropdown from '../../components/common/Dropdown';
 import ContentWrapper from '../../components/common/ContentWrapper';
 
@@ -35,19 +36,35 @@ const ButtonYear = styled(Button)`
   border-radius: 30px;
   text-align: center;
 `;
-const HonorBox = styled.div`
+const HonorRow = styled.div`
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  margin-top: 80px;
+  width: 100%;
+  height: 550px;
+  line-height: 225px;
+  align-items: center;
+  justify-content: center;
+  color: #ffffff;
+  background-color: #364d79;
+`;
+const Carousel = styled(Slider)`
+  width: 100%;
+  height: 540px;
+`;
+
+const HonorBox = styled.div`
   background-color: white;
-  width: 301px;
+  line-height: 45px;
+  width: 300px;
   height: 501px;
 `;
+
 function HonorOfBBBContent(): React.ReactElement {
   // 여기서 페이지 변경하는 로직 만들면 되지 않을까
 
   const yearList = ['전체', '2020', '2021', '2022'];
   const [currentSelectYear, setCurrentSelectYear] = useState('');
-
   const handleOnChangeYear: ChangeEventHandler<HTMLSelectElement> = (e) => {
     const { target } = e;
     console.log(currentSelectYear);
@@ -57,6 +74,15 @@ function HonorOfBBBContent(): React.ReactElement {
       setCurrentSelectYear(target.value);
     }
   };
+  const settings = {
+    className: 'center',
+    centerMode: true,
+    infinite: true,
+    centerPadding: '60px',
+    slidesToShow: 3,
+    speed: 500,
+  };
+
   return (
     <ContentWrapper
       title="명예의 전당"
@@ -76,8 +102,9 @@ function HonorOfBBBContent(): React.ReactElement {
           </BtnCol>
           <BtnCol span={9} />
         </BtnRow>
-        <CommonRow>
-          <CommonCol>
+
+        <HonorRow>
+          <Carousel {...{ settings }}>
             <HonorBox>
               <h3>스터디</h3>
               <div />
@@ -87,8 +114,26 @@ function HonorOfBBBContent(): React.ReactElement {
               <h6>전화번호</h6>
               <h6>전화번호</h6>
             </HonorBox>
-          </CommonCol>
-        </CommonRow>
+            <HonorBox>
+              <h3>스터디2</h3>
+              <div />
+              <h5>컴퓨터공학과</h5>
+              <h2>이름</h2>
+              <h6>전화번호</h6>
+              <h6>전화번호</h6>
+              <h6>전화번호</h6>
+            </HonorBox>
+            <HonorBox>
+              <h3>스터디3</h3>
+              <div />
+              <h5>컴퓨터공학과</h5>
+              <h2>이름</h2>
+              <h6>전화번호</h6>
+              <h6>전화번호</h6>
+              <h6>전화번호</h6>
+            </HonorBox>
+          </Carousel>
+        </HonorRow>
       </>
     </ContentWrapper>
   );
