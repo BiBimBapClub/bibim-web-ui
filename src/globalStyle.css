@@ -3,6 +3,8 @@
   src: url('./fonts/Recipekorea\ 레코체\ FONT.ttf');
 }
 @import '~antd/dist/antd.css';
+@import '~slick-carousel/slick/slick.css';
+@import '~slick-carousel/slick/slick-theme.css';
 #root {
   margin: 0;
   width: 100vw;
