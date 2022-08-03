@@ -40,11 +40,11 @@ const NavRow = styled(Row)`
   margin: 0 20px 0 20px;
 `;
 const SubCol = styled(Col)`
-  height: 50px;
+  height: 150px;
 `;
 const SubRow = styled(Row)`
   width: 100%;
-  height: 52px;
+  height: 152px;
   margin-top: 0px;
   margin-bottom: 0px;
 `;

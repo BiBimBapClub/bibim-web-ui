@@ -42,9 +42,6 @@ const HonorRow = styled.div`
   margin-top: 80px;
   width: 100%;
   height: 550px;
-  line-height: 225px;
-  align-items: center;
-  justify-content: center;
   color: #ffffff;
   background-color: #364d79;
 `;
@@ -54,10 +51,18 @@ const Carousel = styled(Slider)`
 `;
 
 const HonorBox = styled.div`
-  background-color: white;
-  line-height: 45px;
-  width: 300px;
+  background-color: coral;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-size: 40px;
+  width: 150px;
   height: 501px;
+  border-left: 30px;
+  border-right: 30px;
+  border-color: #364d79;
 `;
 
 function HonorOfBBBContent(): React.ReactElement {
@@ -74,15 +79,14 @@ function HonorOfBBBContent(): React.ReactElement {
       setCurrentSelectYear(target.value);
     }
   };
-  const settings = {
-    className: 'center',
-    centerMode: true,
-    infinite: true,
-    centerPadding: '60px',
-    slidesToShow: 3,
-    speed: 500,
-  };
-
+  // const settings = {
+  //   className: 'center',
+  //   centerMode: true,
+  //   infinite: true,
+  //   centerPadding: '60px',
+  //   slidesToShow: 3,
+  //   speed: 500,
+  // };
   return (
     <ContentWrapper
       title="명예의 전당"
@@ -104,7 +108,17 @@ function HonorOfBBBContent(): React.ReactElement {
         </BtnRow>
 
         <HonorRow>
-          <Carousel {...{ settings }}>
+          <Carousel
+            className="slider variable-width"
+            dots
+            centerMode
+            infinite
+            centerPadding="180px"
+            slidesToShow={4}
+            slidesPerRow={1}
+            slidesToScroll={1}
+            speed={500}
+          >
             <HonorBox>
               <h3>스터디</h3>
               <div />
@@ -125,6 +139,24 @@ function HonorOfBBBContent(): React.ReactElement {
             </HonorBox>
             <HonorBox>
               <h3>스터디3</h3>
+              <div />
+              <h5>컴퓨터공학과</h5>
+              <h2>이름</h2>
+              <h6>전화번호</h6>
+              <h6>전화번호</h6>
+              <h6>전화번호</h6>
+            </HonorBox>
+            <HonorBox>
+              <h3>스터디4</h3>
+              <div />
+              <h5>컴퓨터공학과</h5>
+              <h2>이름</h2>
+              <h6>전화번호</h6>
+              <h6>전화번호</h6>
+              <h6>전화번호</h6>
+            </HonorBox>
+            <HonorBox>
+              <h3>스터디5</h3>
               <div />
               <h5>컴퓨터공학과</h5>
               <h2>이름</h2>
