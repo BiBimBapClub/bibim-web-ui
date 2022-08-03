@@ -19,6 +19,7 @@ const SubNavCol = styled(Col)`
     color: #eeeeee;
     cursor: pointer;
   }
+  height: 100%;
   background-color: #ffffff;
   display: flex;
   align-items: center;
@@ -29,7 +30,7 @@ const SubNavCol = styled(Col)`
 `;
 const SubNavRow = styled(Row)`
   width: 100vw;
-  height: 50px;
+  height: 150px;
 `;
 interface Props {
   number: number;
