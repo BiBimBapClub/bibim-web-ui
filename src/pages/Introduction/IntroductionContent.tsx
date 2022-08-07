@@ -2,14 +2,17 @@ import React from 'react';
 import styled from 'styled-components';
 import ContentWrapper from '../../components/common/ContentWrapper';
 
+// const Zoom = require('react-reveal/Zoom');
+const Bounce = require('react-reveal/Bounce');
+
 const WhiteLine = styled.span`
+  position: absolute;
   width: 100%;
   height: 10px;
-  margin-top: 420px;
+  margin-top: 265px;
   border-color: white;
   border-radius: 4px;
   background-color: white;
-  position: absolute;
   z-index: 0;
 `;
 const YearTotalFlex = styled.div`
@@ -97,11 +100,10 @@ function IntroductionContent(): React.ReactElement {
   }
   return (
     <ContentWrapper title="동아리소개" subTitle="비빔밥 소개">
-
-      <>
+      <Bounce left cascade>
         <WhiteLine />
         <YearTotalFlex>{YearDivArr}</YearTotalFlex>
-      </>
+      </Bounce>
     </ContentWrapper>
   );
 }

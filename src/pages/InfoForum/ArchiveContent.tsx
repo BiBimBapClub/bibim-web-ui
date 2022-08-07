@@ -2,6 +2,7 @@ import React from 'react';
 import styled from 'styled-components';
 import ContentWrapper from '../../components/common/ContentWrapper';
 // import styled from 'styled-components';
+const Fade = require('react-reveal/Fade');
 
 const DownloadArr = [
   '스터디 활동 보고서',
@@ -40,7 +41,9 @@ function ForumContent(): React.ReactElement {
   );
   return (
     <ContentWrapper title="자료실" subTitle="동아리 활동에 필요한 서식">
-      <DownloadSpace>{Download}</DownloadSpace>
+      <Fade up>
+        <DownloadSpace>{Download}</DownloadSpace>
+      </Fade>
     </ContentWrapper>
   );
 }

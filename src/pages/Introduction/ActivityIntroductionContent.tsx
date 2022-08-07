@@ -3,8 +3,12 @@ import styled from 'styled-components';
 import { Col, Row } from 'antd';
 import ContentWrapper from '../../components/common/ContentWrapper';
 // import styled from 'styled-components';
+
+const Fade = require('react-reveal/Fade');
+
 const BarRow = styled(Row)`
   margin-bottom: 100px;
+  width: 100%;
 `;
 const BarLeft = styled.div`
   background-color: white;
@@ -44,19 +48,23 @@ function ActivityIntroduction(): React.ReactElement {
       <>
         <BarRow>
           <Col span={16}>
-            <BarLeft>
-              <h1>프로그래밍 스터디 & 프로젝트</h1>
-              <GreenBall />
-            </BarLeft>
+            <Fade left>
+              <BarLeft>
+                <h1>프로그래밍 스터디 & 프로젝트</h1>
+                <GreenBall />
+              </BarLeft>
+            </Fade>
           </Col>
           <Col span={8} />
         </BarRow>
         <BarRow>
           <Col span={16} offset={8}>
-            <BarRight>
-              <GreenBall />
-              <h1>동아리 자체 공모전 개최</h1>
-            </BarRight>
+            <Fade right>
+              <BarRight>
+                <GreenBall />
+                <h1>동아리 자체 공모전 개최</h1>
+              </BarRight>
+            </Fade>
           </Col>
         </BarRow>
       </>

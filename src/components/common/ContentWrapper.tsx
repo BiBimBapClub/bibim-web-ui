@@ -1,22 +1,23 @@
 import React from 'react';
 import styled from 'styled-components';
 
+const Fade = require('react-reveal/Fade');
+
 const ContentDiv = styled.div`
   width: 100%;
   height: 100%;
   display: flex;
   flex-direction: column;
+  align-items: center;
   margin-top: 100px;
 `;
 const PageTitle = styled.div`
-  align-self: center;
   height: 100%;
   font-size: 100px;
   color: #00ff80;
 `;
 const SubTitle = styled.div`
   font-size: 24px;
-  align-self: center;
   color: white;
   margin-bottom: 50px;
 `;
@@ -34,8 +35,10 @@ function ContentWrapper({
 }: Props): React.ReactElement {
   return (
     <ContentDiv>
-      <PageTitle>{title}</PageTitle>
-      {subTitle && <SubTitle>{subTitle}</SubTitle>}
+      <Fade up>
+        <PageTitle>{title}</PageTitle>
+        {subTitle && <SubTitle>{subTitle}</SubTitle>}
+      </Fade>
       {children}
     </ContentDiv>
   );
