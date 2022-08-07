@@ -7,6 +7,7 @@ import ContentWrapper from '../../components/common/ContentWrapper';
 
 const ReviewBox = styled.div`
   display: flex;
+  width: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
