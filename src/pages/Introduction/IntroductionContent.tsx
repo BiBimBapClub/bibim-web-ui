@@ -7,7 +7,7 @@ const Bounce = require('react-reveal/Bounce');
 
 const WhiteLine = styled.span`
   position: absolute;
-  width: 100%;
+  width: 90%;
   height: 10px;
   margin-top: 265px;
   border-color: white;
@@ -101,8 +101,10 @@ function IntroductionContent(): React.ReactElement {
   return (
     <ContentWrapper title="동아리소개" subTitle="비빔밥 소개">
       <Bounce left cascade>
-        <WhiteLine />
-        <YearTotalFlex>{YearDivArr}</YearTotalFlex>
+        <div>
+          <WhiteLine />
+          <YearTotalFlex>{YearDivArr}</YearTotalFlex>
+        </div>
       </Bounce>
     </ContentWrapper>
   );
