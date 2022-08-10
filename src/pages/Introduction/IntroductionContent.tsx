@@ -24,6 +24,7 @@ const WhiteLine = styled.span`
 const WhitelineDiv = styled.div`
   width: 93vw;
   height: 15px;
+  margin-left: 80px;
 `;
 const BounceLine = styled(Bounce)`
   height: 12px;
@@ -41,7 +42,7 @@ const YearTotalFlex = styled.div`
 const YearSpace = styled.div`
   width: 240px;
   height: 540px;
-  padding-left: 35px;
+  padding-left: 80px;
   z-index: 3;
 `;
 const WhiteColUP = styled.div`
