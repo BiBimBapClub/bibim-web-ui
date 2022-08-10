@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled from 'styled-components';
 import ContentWrapper from '../../components/common/ContentWrapper';
 // import styled from 'styled-components';
@@ -22,7 +22,6 @@ const QAList = [
     'A4. 222학기 부원 모집은 9월 1일 부터입니다.',
   ],
 ];
-// const [visible, setVisible] = useState(false);
 const QASpace = styled.div`
   width: 100%;
   height: 100%;
@@ -34,35 +33,55 @@ const QASpace = styled.div`
 const QBar = styled.div`
   width: 581px;
   height: 58px;
-  /* visiblity: ; */
   display: flex;
+  margin-top: 30px;
+  padding: 0 15px 0 15px;
+  border-radius: 29px;
+  background-color: black;
+  cursor: pointer;
+  color: white;
+  align-items: center;
+  justify-content: space-between;
+`;
+const ABar = styled.div`
+  width: 581px;
+  height: 58px;
+  display: none;
+  padding: 0 15px 0 15px;
   margin-top: 30px;
   border-radius: 29px;
   background-color: white;
   color: black;
   align-items: center;
-  justify-content: space-between;
+  justify-content: start;
 `;
-// const ABar = styled.div`
-//   width: 581px;
-//   height: 58px;
-//   display: flex;
-//   margin-top: 30px;
-//   border-radius: 29px;
-//   background-color: black;
-//   color: white;
-//   align-items: center;
-//   justify-content: start;
-// `;
+const AID = document.getElementById('A1');
+function SetDisplay() {
+  if (AID?.style.display === 'none') {
+    AID.style.display = 'flex';
+  } else if (AID?.style.display === 'flex') {
+    AID.style.display = 'none';
+  }
+}
 function QnAContent(): React.ReactElement {
   // 여기서 페이지 변경하는 로직 만들면 되지 않을까
+  const [arrow, setArrow] = useState('▼');
   const QA = [];
   QA.push(
     QAList.map((QAName) => (
-      <QBar>
-        <div>{QAName[0]}</div>
-        {/* <div onClick={}>▼</div> */}
-      </QBar>
+      <div>
+        <QBar
+          onClick={() => {
+            setArrow('▲');
+            SetDisplay();
+            console.log('hihi');
+          }}
+        >
+          <div>{QAName[0]}</div>
+          <div>{arrow}</div>
+        </QBar>
+        <ABar id="A1">{QAName[1]}</ABar>
+      </div>
     )),
   );
   return (
