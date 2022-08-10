@@ -21,6 +21,7 @@ const DownloadSpace = styled.div`
 const DownloadBar = styled.div`
   width: 581px;
   height: 58px;
+  font-size: 28px;
   display: flex;
   cursor: pointer;
   margin-top: 30px;
@@ -36,7 +37,10 @@ function ForumContent(): React.ReactElement {
   const Download = [];
   Download.push(
     DownloadArr.map((downloadName) => (
-      <DownloadBar onClick={() => {}}>{downloadName}</DownloadBar>
+      <DownloadBar onClick={() => {}}>
+        {downloadName}
+        <div>💾</div>
+      </DownloadBar>
     )),
   );
   return (

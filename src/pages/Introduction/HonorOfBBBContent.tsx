@@ -79,14 +79,7 @@ function HonorOfBBBContent(): React.ReactElement {
       setCurrentSelectYear(target.value);
     }
   };
-  // const settings = {
-  //   className: 'center',
-  //   centerMode: true,
-  //   infinite: true,
-  //   centerPadding: '60px',
-  //   slidesToShow: 3,
-  //   speed: 500,
-  // };
+
   return (
     <ContentWrapper
       title="명예의 전당"

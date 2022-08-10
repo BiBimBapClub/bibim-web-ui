@@ -1,19 +1,37 @@
 import React from 'react';
+import Slider from 'react-slick';
 import styled from 'styled-components';
 import ContentWrapper from '../../components/common/ContentWrapper';
 
 // const Zoom = require('react-reveal/Zoom');
 const Bounce = require('react-reveal/Bounce');
 
+const Carousel = styled(Slider)`
+  width: 100%;
+  height: 540px;
+`;
 const WhiteLine = styled.span`
   position: absolute;
-  width: 100%;
+  width: 90vw;
   height: 10px;
-  margin-top: 265px;
+  align-self: flex-start;
+  margin-top: 280px;
   border-color: white;
   border-radius: 4px;
   background-color: white;
   z-index: 0;
+`;
+const WhitelineDiv = styled.div`
+  width: 93vw;
+  height: 15px;
+  margin-left: 80px;
+`;
+const BounceLine = styled(Bounce)`
+  height: 12px;
+  width: 100vw;
+  display: flex;
+  align-self: flex-start;
+  justify-self: flex-start;
 `;
 const YearTotalFlex = styled.div`
   width: 100%;
@@ -24,6 +42,7 @@ const YearTotalFlex = styled.div`
 const YearSpace = styled.div`
   width: 240px;
   height: 540px;
+  padding-left: 80px;
   z-index: 3;
 `;
 const WhiteColUP = styled.div`
@@ -63,7 +82,8 @@ const YearNum = styled.div`
   z-index: 1;
   font-size: 23px;
 `;
-const YearArr = [2010, 2015, 2016, 2017, 2018, 2019, 2020, 2021];
+
+const YearArr = [2010, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
 const HistoryArr = [
   '동아리 설립, SKT 공모전 참여 안드로이드, FAlinux 세미나 참여',
   '안전 귀가 택시 앱 개발',
@@ -73,6 +93,8 @@ const HistoryArr = [
   '안전 귀가 택시 앱 개발',
   '동아리 설립, SKT 공모전 참여 안드로이드, FAlinux 세미나 참여',
   '코로나 비대면 스터디',
+  '동아리 설립, SKT 공모전 참여 안드로이드, FAlinux 세미나 참여',
+  '코로나 비대면 스터디',
 ];
 function IntroductionContent(): React.ReactElement {
   // 여기서 페이지 변경하는 로직 만들면 되지 않을까
@@ -80,30 +102,54 @@ function IntroductionContent(): React.ReactElement {
   for (let i = 0; i < YearArr.length; i += 1) {
     if (i % 2 === 0) {
       YearDivArr.push(
-        <YearSpace>
-          <WhiteColUP />
-          <YearText>{HistoryArr[i]}</YearText>
-          <YearNum>{YearArr[i]}</YearNum>
-          <YearText />
-        </YearSpace>,
+        <Bounce top cascade>
+          <YearSpace>
+            <WhiteColUP />
+            <YearText>{HistoryArr[i]}</YearText>
+            <YearNum>{YearArr[i]}</YearNum>
+            <YearText />
+          </YearSpace>
+        </Bounce>,
       );
     } else {
       YearDivArr.push(
-        <YearSpace>
-          <YearText />
-          <YearNum>{YearArr[i]}</YearNum>
-          <WhiteColDOWN />
-          <YearText>{HistoryArr[i]}</YearText>
-        </YearSpace>,
+        <Bounce bottom cascade>
+          <YearSpace>
+            <YearText />
+            <YearNum>{YearArr[i]}</YearNum>
+            <WhiteColDOWN />
+            <YearText>{HistoryArr[i]}</YearText>
+          </YearSpace>
+        </Bounce>,
       );
     }
   }
   return (
     <ContentWrapper title="동아리소개" subTitle="비빔밥 소개">
-      <Bounce left cascade>
-        <WhiteLine />
-        <YearTotalFlex>{YearDivArr}</YearTotalFlex>
-      </Bounce>
+      <>
+        <BounceLine left>
+          <WhitelineDiv>
+            <WhiteLine />
+          </WhitelineDiv>
+        </BounceLine>
+
+        <YearTotalFlex>
+          <Carousel
+            className="slider variable-width"
+            dots
+            infinite
+            centerPadding="180px"
+            autoplay
+            autoplaySpeed={4000}
+            slidesToShow={8}
+            slidesPerRow={1}
+            slidesToScroll={1}
+            speed={500}
+          >
+            {YearDivArr}
+          </Carousel>
+        </YearTotalFlex>
+      </>
     </ContentWrapper>
   );
 }
