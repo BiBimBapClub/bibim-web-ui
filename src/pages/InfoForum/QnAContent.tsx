@@ -46,7 +46,7 @@ const QBar = styled.div`
 const ABar = styled.div`
   width: 581px;
   height: 58px;
-  display: none;
+  display: flex;
   padding: 0 15px 0 15px;
   margin-top: 30px;
   border-radius: 29px;
@@ -55,35 +55,41 @@ const ABar = styled.div`
   align-items: center;
   justify-content: start;
 `;
-const AID = document.getElementById('A1');
-function SetDisplay() {
-  if (AID?.style.display === 'none') {
-    AID.style.display = 'flex';
-  } else if (AID?.style.display === 'flex') {
-    AID.style.display = 'none';
-  }
-}
+
 function QnAContent(): React.ReactElement {
   // 여기서 페이지 변경하는 로직 만들면 되지 않을까
-  const [arrow, setArrow] = useState('▼');
+  const [arrow, setArrow] = useState(['▼', '▼', '▼', '▼']);
+  const [answer, setAnswer] = useState(['', '', '', '']);
+
   const QA = [];
+
   QA.push(
-    QAList.map((QAName) => (
+    QAList.map((QAName, i) => (
       <div>
         <QBar
           onClick={() => {
-            setArrow('▲');
-            SetDisplay();
+            const copyArrow = [...arrow];
+            const copyAnswer = [...answer];
+            if (copyArrow[i] === '▼') {
+              copyArrow[i] = '▲';
+              copyAnswer.splice(1, i, QAName[1]);
+            } else {
+              copyArrow[i] = '▼';
+              copyAnswer[i] = '';
+            }
+            setArrow(copyArrow);
+            setAnswer(copyAnswer);
             console.log('hihi');
           }}
         >
           <div>{QAName[0]}</div>
-          <div>{arrow}</div>
+          <div>{arrow[i]}</div>
         </QBar>
-        <ABar id="A1">{QAName[1]}</ABar>
+        <ABar>{answer}</ABar>
       </div>
     )),
   );
+
   return (
     <ContentWrapper title="Q&A" subTitle="">
       <Fade up>
