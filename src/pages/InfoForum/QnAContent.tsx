@@ -59,7 +59,7 @@ const ABar = styled.div`
 function QnAContent(): React.ReactElement {
   // 여기서 페이지 변경하는 로직 만들면 되지 않을까
   const [arrow, setArrow] = useState(['▼', '▼', '▼', '▼']);
-  const [answer, setAnswer] = useState(['', '', '', '']);
+  const [answer, setAnswer] = useState([<div />, <div />, <div />, <div />]);
 
   const QA = [];
 
@@ -72,10 +72,11 @@ function QnAContent(): React.ReactElement {
             const copyAnswer = [...answer];
             if (copyArrow[i] === '▼') {
               copyArrow[i] = '▲';
-              copyAnswer.splice(1, i, QAName[1]);
+              copyAnswer.splice(i, 1, <ABar>{QAList[i][1]}</ABar>);
+              // copyAnswer = <ABar>QAName[1]</ABar>;
             } else {
               copyArrow[i] = '▼';
-              copyAnswer[i] = '';
+              copyAnswer.splice(i, 1, <ABar>{QAList[i][1]}</ABar>);
             }
             setArrow(copyArrow);
             setAnswer(copyAnswer);
@@ -85,7 +86,7 @@ function QnAContent(): React.ReactElement {
           <div>{QAName[0]}</div>
           <div>{arrow[i]}</div>
         </QBar>
-        <ABar>{answer}</ABar>
+        {answer[i]}
       </div>
     )),
   );
