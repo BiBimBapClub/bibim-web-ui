@@ -76,7 +76,7 @@ function QnAContent(): React.ReactElement {
               // copyAnswer = <ABar>QAName[1]</ABar>;
             } else {
               copyArrow[i] = '▼';
-              copyAnswer.splice(i, 1, <ABar>{QAList[i][1]}</ABar>);
+              copyAnswer.splice(i, 1, <span />);
             }
             setArrow(copyArrow);
             setAnswer(copyAnswer);
