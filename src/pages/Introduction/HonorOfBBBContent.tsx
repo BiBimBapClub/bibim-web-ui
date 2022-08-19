@@ -5,6 +5,71 @@ import Slider from 'react-slick';
 import Dropdown from '../../components/common/Dropdown';
 import ContentWrapper from '../../components/common/ContentWrapper';
 
+const HonorList = [
+  [
+    'Title',
+    'image link',
+    '컴퓨터 공학과 학번',
+    '이름',
+    '연락처',
+    '이메일',
+    '깃허브',
+  ],
+  [
+    'Title1',
+    'image link',
+    '컴퓨터 공학과 학번',
+    '이름',
+    '연락처',
+    '이메일',
+    '깃허브',
+  ],
+  [
+    'Title2',
+    'image link',
+    '컴퓨터 공학과 학번',
+    '이름',
+    '연락처',
+    '이메일',
+    '깃허브',
+  ],
+  [
+    'Title3',
+    'image link',
+    '컴퓨터 공학과 학번',
+    '이름',
+    '연락처',
+    '이메일',
+    '깃허브',
+  ],
+  [
+    'Title4',
+    'image link',
+    '컴퓨터 공학과 학번',
+    '이름',
+    '연락처',
+    '이메일',
+    '깃허브',
+  ],
+  [
+    'Title5',
+    'image link',
+    '컴퓨터 공학과 학번',
+    '이름',
+    '연락처',
+    '이메일',
+    '깃허브',
+  ],
+  [
+    'Title6',
+    'image link',
+    '컴퓨터 공학과 학번',
+    '이름',
+    '연락처',
+    '이메일',
+    '깃허브',
+  ],
+];
 const CommonRow = styled(Row)`
   width: 100%;
 `;
@@ -43,26 +108,37 @@ const HonorRow = styled.div`
   width: 100%;
   height: 550px;
   color: #ffffff;
-  background-color: #364d79;
 `;
 const Carousel = styled(Slider)`
   width: 100%;
   height: 540px;
 `;
-
 const HonorBox = styled.div`
-  background-color: coral;
   display: flex;
+  margin-right: 30px;
+  flex-direction: row;
+  font-size: 40px;
+  width: 450px;
+  height: 100%;
+`;
+const HonorSpace = styled.div`
+  background-color: white;
+  display: flex;
+  width: 420px;
+  height: 100%;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-size: 40px;
-  width: 150px;
-  height: 501px;
-  border-left: 30px;
-  border-right: 30px;
-  border-color: #364d79;
+  border-radius: 40px;
+`;
+const HollowSpace = styled.div`
+  display: flex;
+  /* background-color: rgba(0, 0, 0, 0);*/
+  background-color: black;
+
+  width: 30px;
+  height: 100%;
 `;
 
 function HonorOfBBBContent(): React.ReactElement {
@@ -70,6 +146,7 @@ function HonorOfBBBContent(): React.ReactElement {
 
   const yearList = ['전체', '2020', '2021', '2022'];
   const [currentSelectYear, setCurrentSelectYear] = useState('');
+
   const handleOnChangeYear: ChangeEventHandler<HTMLSelectElement> = (e) => {
     const { target } = e;
     console.log(currentSelectYear);
@@ -79,6 +156,24 @@ function HonorOfBBBContent(): React.ReactElement {
       setCurrentSelectYear(target.value);
     }
   };
+  const HonorBBBARR = [];
+  for (let i = 0; i < HonorList.length; i += 1) {
+    HonorBBBARR.push(
+      <HonorBox>
+        <HonorSpace>
+          <h3>{HonorList[i][0]}</h3>
+          <h3>{HonorList[i][1]}</h3>
+          <div>{HonorList[i][2]}</div>
+          <h5>{HonorList[i][3]}</h5>
+          <h2>{HonorList[i][4]}</h2>
+          <h6>{HonorList[i][5]}</h6>
+          <h6>{HonorList[i][6]}</h6>
+          <h6>{HonorList[i][7]}</h6>
+        </HonorSpace>
+        <HollowSpace />
+      </HonorBox>,
+    );
+  }
 
   return (
     <ContentWrapper
@@ -111,52 +206,9 @@ function HonorOfBBBContent(): React.ReactElement {
             slidesPerRow={1}
             slidesToScroll={1}
             speed={500}
+            variableWidth
           >
-            <HonorBox>
-              <h3>스터디</h3>
-              <div />
-              <h5>컴퓨터공학과</h5>
-              <h2>이름</h2>
-              <h6>전화번호</h6>
-              <h6>전화번호</h6>
-              <h6>전화번호</h6>
-            </HonorBox>
-            <HonorBox>
-              <h3>스터디2</h3>
-              <div />
-              <h5>컴퓨터공학과</h5>
-              <h2>이름</h2>
-              <h6>전화번호</h6>
-              <h6>전화번호</h6>
-              <h6>전화번호</h6>
-            </HonorBox>
-            <HonorBox>
-              <h3>스터디3</h3>
-              <div />
-              <h5>컴퓨터공학과</h5>
-              <h2>이름</h2>
-              <h6>전화번호</h6>
-              <h6>전화번호</h6>
-              <h6>전화번호</h6>
-            </HonorBox>
-            <HonorBox>
-              <h3>스터디4</h3>
-              <div />
-              <h5>컴퓨터공학과</h5>
-              <h2>이름</h2>
-              <h6>전화번호</h6>
-              <h6>전화번호</h6>
-              <h6>전화번호</h6>
-            </HonorBox>
-            <HonorBox>
-              <h3>스터디5</h3>
-              <div />
-              <h5>컴퓨터공학과</h5>
-              <h2>이름</h2>
-              <h6>전화번호</h6>
-              <h6>전화번호</h6>
-              <h6>전화번호</h6>
-            </HonorBox>
+            {HonorBBBARR}
           </Carousel>
         </HonorRow>
       </>
