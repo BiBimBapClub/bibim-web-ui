@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { keyframes } from 'styled-components';
 import { Col, Row } from 'antd';
 import ContentWrapper from '../../components/common/ContentWrapper';
 // import styled from 'styled-components';
@@ -8,9 +8,19 @@ const Fade = require('react-reveal/Fade');
 const WholeDiv = styled.div`
   width: 100vw;
 `;
+const spread = keyframes`
+  from{
+    height: 3000px
+  }
+  to{
+    height: 120px
+  }
+`;
 const BarRow = styled(Row)`
   margin-bottom: 100px;
   width: 100%;
+  height: 120px;
+  animation: ${spread} 0.5s linear;
 `;
 const BarLeft = styled.div`
   background-color: white;
