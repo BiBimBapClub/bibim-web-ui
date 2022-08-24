@@ -17,7 +17,6 @@ const ImgDiv = styled.img`
   display: flex;
 `;
 const Title = styled.div`
-  height: 50px;
   font-size: 42px;
   color: white;
 `;
@@ -46,7 +45,7 @@ const LanguageSpace = styled.div`
 interface Props {
   imgsrc: string;
   title: string;
-  generation: number;
+  green: string;
   children: JSX.Element;
   language: string[];
 }
@@ -54,7 +53,7 @@ interface Props {
 function ContentBox({
   imgsrc = '../image/bibim_logo.png',
   title,
-  generation,
+  green,
   children,
   language,
 }: Props): React.ReactElement {
@@ -69,10 +68,7 @@ function ContentBox({
     <BoxDiv>
       <Fade up>
         <ImgDiv src={imgsrc} />
-        <GenerationDiv>
-          {generation}
-          <p>기</p>
-        </GenerationDiv>
+        <GenerationDiv>{green}</GenerationDiv>
         <Title>{title}</Title>
         <DetailDiv>{children}</DetailDiv>
         <LanguageDiv>{languageList}</LanguageDiv>

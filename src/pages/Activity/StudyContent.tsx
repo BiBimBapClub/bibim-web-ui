@@ -1,8 +1,8 @@
 /* eslint-disable no-console */
 import React, { ChangeEventHandler, useState } from 'react';
 import ContentWrapper from '../../components/common/ContentWrapper';
+import ContentBox from '../../components/common/ContentBox';
 import Dropdown from '../../components/common/Dropdown';
-import CardTemplate from './detail/CardTemplate';
 import { CardGrid, ClassificationDiv, SelectDiv, SelectTitle } from './Styled';
 
 const yearList = ['전체', '2020', '2021', '2022'];
@@ -47,15 +47,16 @@ function StudyContent(): React.ReactElement {
           </SelectDiv>
         </ClassificationDiv>
         <CardGrid>
-          <CardTemplate
-            onClick={() => console.log('clicked!')}
-            cardName="템플릿"
-            week="1"
-            year="2022"
-            pageType="study"
-            field="C++"
-            tutorName="서형상"
-          />
+          <ContentBox
+            title="종만북 알고리즘 스터디"
+            imgsrc="../../components/common/image/bibim_logo.png"
+            green="1회"
+            language={['python', 'C++', 'JAVA']}
+          >
+            <div>
+              <span>백준 9867</span>
+            </div>
+          </ContentBox>
         </CardGrid>
       </>
     </ContentWrapper>

@@ -30,7 +30,7 @@ function ContestContent(): React.ReactElement {
           <ContentBox
             title="비빔밥 해커톤 대회"
             imgsrc="../../components/common/image/bibim_logo.png"
-            generation={6}
+            green="6기"
             language={['python', 'swift', 'react']}
           >
             <div>
@@ -42,7 +42,7 @@ function ContestContent(): React.ReactElement {
           <ContentBox
             title="비빔밥 해커톤 대회"
             imgsrc="../../components/common/image/bibim_logo.png"
-            generation={6}
+            green="6기"
             language={['python', 'swift', 'react']}
           >
             <div>
@@ -54,7 +54,7 @@ function ContestContent(): React.ReactElement {
           <ContentBox
             title="비빔밥 해커톤 대회"
             imgsrc=""
-            generation={6}
+            green="6기"
             language={['python', 'swift', 'react']}
           >
             <div>
@@ -69,7 +69,7 @@ function ContestContent(): React.ReactElement {
           <ContentBox
             title="비빔밥 해커톤 대회"
             imgsrc=""
-            generation={6}
+            green="6기"
             language={['python', 'swift', 'react']}
           >
             <div>
