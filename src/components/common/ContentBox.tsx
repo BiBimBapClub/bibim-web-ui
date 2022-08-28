@@ -16,6 +16,10 @@ const ImgDiv = styled.img`
   height: 40%;
   display: flex;
 `;
+const WeekDiv = styled.div`
+  font-size: 20px;
+  color: white;
+`;
 const Title = styled.div`
   font-size: 42px;
   color: white;
@@ -36,6 +40,11 @@ const LanguageDiv = styled.div`
   flex-direction: row;
   height: 20px;
 `;
+const LeaderDiv = styled.div`
+  width: 70px;
+  height: 18px;
+  font-size: 16px;
+`;
 const LanguageSpace = styled.div`
   width: 70px;
   height: 18px;
@@ -45,17 +54,23 @@ const LanguageSpace = styled.div`
 interface Props {
   imgsrc: string;
   title: string;
-  green: string;
+  year: string;
+  leader: string;
+  week: string;
   children: JSX.Element;
   language: string[];
+  onClick: React.MouseEventHandler<HTMLDivElement>;
 }
 
 function ContentBox({
   imgsrc = '../image/bibim_logo.png',
   title,
-  green,
+  week,
+  leader,
+  year,
   children,
   language,
+  onClick,
 }: Props): React.ReactElement {
   const languageList = [];
   languageList.push(
@@ -65,12 +80,14 @@ function ContentBox({
   );
 
   return (
-    <BoxDiv>
+    <BoxDiv onClick={onClick}>
       <Fade up>
         <ImgDiv src={imgsrc} />
-        <GenerationDiv>{green}</GenerationDiv>
+        <GenerationDiv>{year}</GenerationDiv>
+        <WeekDiv>{week}</WeekDiv>
         <Title>{title}</Title>
         <DetailDiv>{children}</DetailDiv>
+        <LeaderDiv>{leader}</LeaderDiv>
         <LanguageDiv>{languageList}</LanguageDiv>
       </Fade>
     </BoxDiv>

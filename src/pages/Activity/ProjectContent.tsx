@@ -1,9 +1,8 @@
 /* eslint-disable no-console */
-import React, { ChangeEventHandler, MouseEventHandler, useState } from 'react';
+import React, { ChangeEventHandler, useState, MouseEventHandler } from 'react';
 import ContentWrapper from '../../components/common/ContentWrapper';
 import Dropdown from '../../components/common/Dropdown';
-import CardTemplate from './detail/CardTemplate';
-import ProjectDetail from './detail/ProjectDetail';
+import ContentBox from '../../components/common/ContentBox';
 import { CardGrid, ClassificationDiv, SelectDiv, SelectTitle } from './Styled';
 
 const yearList = ['전체', '2020', '2021', '2022'];
@@ -32,7 +31,6 @@ function ProjectContent(): React.ReactElement {
       setCurrentSelectField(target.value);
     }
   };
-
   const handleOnClickCard: MouseEventHandler<HTMLDivElement> = (e) => {
     const { currentTarget } = e;
     console.log(currentTarget);
@@ -52,42 +50,20 @@ function ProjectContent(): React.ReactElement {
           </SelectDiv>
         </ClassificationDiv>
         <CardGrid>
-          <CardTemplate
+          <ContentBox
             onClick={handleOnClickCard}
-            cardName="장준서 바보"
-            week="1"
+            title="비빔밥 홈페이지 만들기"
+            imgsrc="../../components/common/image/bibim_logo.png"
+            week="8주간"
+            leader="조윤혁"
             year="2022"
-            pageType="project"
-            usedStack={[
-              'C++',
-              'JAVA',
-              'Typescript',
-              'Javascript',
-              'Kotlin',
-              'Python',
-            ]}
-            teamLeaderName="장준서"
-            teamName="그나그밥"
-          />
-          <CardTemplate
-            onClick={handleOnClickCard}
-            cardName="김재우 바보"
-            week="1"
-            year="2022"
-            pageType="project"
-            usedStack={[
-              'C++',
-              'JAVA',
-              'Typescript',
-              'Javascript',
-              'Kotlin',
-              'Python',
-            ]}
-            teamLeaderName="장준서"
-            teamName="그나그밥"
-          />
+            language={['python', 'C++', 'JAVA']}
+          >
+            <div>
+              <span>비빔밥 홈페이지를 만들어 보자구~</span>
+            </div>
+          </ContentBox>
         </CardGrid>
-        <ProjectDetail />
       </>
     </ContentWrapper>
   );
