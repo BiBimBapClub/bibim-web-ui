@@ -1,9 +1,10 @@
 /* eslint-disable no-console */
-import React, { ChangeEventHandler, MouseEventHandler, useState } from 'react';
+import React, { ChangeEventHandler, useState, MouseEventHandler } from 'react';
+import { Modal } from 'antd';
+// import styled from 'styled-components';
 import ContentWrapper from '../../components/common/ContentWrapper';
 import Dropdown from '../../components/common/Dropdown';
-import CardTemplate from './detail/CardTemplate';
-import ProjectDetail from './detail/ProjectDetail';
+import ContentBox from '../../components/common/ContentBox';
 import { CardGrid, ClassificationDiv, SelectDiv, SelectTitle } from './Styled';
 
 const yearList = ['전체', '2020', '2021', '2022'];
@@ -32,17 +33,36 @@ function ProjectContent(): React.ReactElement {
       setCurrentSelectField(target.value);
     }
   };
-
   const handleOnClickCard: MouseEventHandler<HTMLDivElement> = (e) => {
     const { currentTarget } = e;
     console.log(currentTarget);
     // router로 작동되는게 바람직할 것으로 보임.
     // 글마다 글 id가 있어서 div에 할당했다가 클릭했을 때, id로 db 조회해서 세부 정보 얻어오는 방식으로 만들어야할 듯.
   };
+  //   const ProjectModal = styled(Modal)`
+  //   background-color: #444444;
+  //   width: 80vw;
+  //   height: 70vh;
+  //   border-radius: 10px;
+  // `;
+  const [visible, setVisible] = useState(false);
 
   return (
     <ContentWrapper title="프로젝트" subTitle="비빔밥 부원들의 멋진 프로젝트">
       <>
+        <Modal
+          title="Modal 1000px width"
+          centered
+          visible={visible}
+          onOk={() => setVisible(false)}
+          onCancel={() => setVisible(false)}
+          width={2000}
+          bodyStyle={{ height: 1200, fontSize: 30 }}
+        >
+          <p>some contents...</p>
+          <p>some contents...</p>
+          <p>some contents...</p>
+        </Modal>
         <ClassificationDiv>
           <SelectDiv>
             <SelectTitle>년도 : </SelectTitle>
@@ -52,42 +72,59 @@ function ProjectContent(): React.ReactElement {
           </SelectDiv>
         </ClassificationDiv>
         <CardGrid>
-          <CardTemplate
+          <ContentBox
             onClick={handleOnClickCard}
-            cardName="장준서 바보"
-            week="1"
+            title="비빔밥 홈페이지 만들기"
+            imgsrc="../../components/common/image/bibim_logo.png"
+            week="8주간"
+            leader="조윤혁"
             year="2022"
-            pageType="project"
-            usedStack={[
-              'C++',
-              'JAVA',
-              'Typescript',
-              'Javascript',
-              'Kotlin',
-              'Python',
-            ]}
-            teamLeaderName="장준서"
-            teamName="그나그밥"
-          />
-          <CardTemplate
+            language={['python', 'C++', 'JAVA']}
+          >
+            <div>
+              <span>비빔밥 홈페이지를 만들어 보자구~</span>
+            </div>
+          </ContentBox>
+          <ContentBox
             onClick={handleOnClickCard}
-            cardName="김재우 바보"
-            week="1"
+            title="비빔밥 홈페이지 만들기"
+            imgsrc="../../components/common/image/bibim_logo.png"
+            week="8주간"
+            leader="조윤혁"
             year="2022"
-            pageType="project"
-            usedStack={[
-              'C++',
-              'JAVA',
-              'Typescript',
-              'Javascript',
-              'Kotlin',
-              'Python',
-            ]}
-            teamLeaderName="장준서"
-            teamName="그나그밥"
-          />
+            language={['python', 'C++', 'JAVA']}
+          >
+            <div>
+              <span>비빔밥 홈페이지를 만들어 보자구~</span>
+            </div>
+          </ContentBox>
+          <ContentBox
+            onClick={handleOnClickCard}
+            title="비빔밥 홈페이지 만들기"
+            imgsrc="../../components/common/image/bibim_logo.png"
+            week="8주간"
+            leader="조윤혁"
+            year="2022"
+            language={['python', 'C++', 'JAVA']}
+          >
+            <div>
+              <span>비빔밥 홈페이지를 만들어 보자구~</span>
+            </div>
+          </ContentBox>
+          <ContentBox
+            onClick={handleOnClickCard}
+            title="비빔밥 홈페이지 만들기"
+            imgsrc="../../components/common/image/bibim_logo.png"
+            week="8주간"
+            leader="조윤혁"
+            year="2022"
+            language={['python', 'C++', 'JAVA']}
+          >
+            <div>
+              <span>비빔밥 홈페이지를 만들어 보자구~</span>
+            </div>
+          </ContentBox>
         </CardGrid>
-        <ProjectDetail />
       </>
     </ContentWrapper>
   );

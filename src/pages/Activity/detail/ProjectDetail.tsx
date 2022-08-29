@@ -1,13 +1,14 @@
 /* eslint-disable no-console */
 import React from 'react';
 import styled from 'styled-components';
+import { Modal } from 'antd';
 import {
-  CardGrid,
+  // CardGrid,
   DetailInnerDiv,
   DetailRouteP,
   DetailTemplateDiv,
 } from '../Styled';
-import CardTemplate from './CardTemplate';
+// import CardTemplate from './CardTemplate';
 
 const ProjectTitleP = styled.p`
   width: 100%;
@@ -21,18 +22,24 @@ const UsedStackP = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
 `;
-
-const OtherProjectP = styled.p`
-  width: 100%;
-  margin: 0;
-  font-size: 40px;
-  margin-bottom: 20px;
+const ProjectModal = styled(Modal)`
+  background-color: #444444;
+  width: 80vw;
+  height: 70vh;
+  border-radius: 10px;
 `;
 
-const OtherProjectsDiv = styled.div`
-  width: 100%;
-  height: 100%;
-`;
+// const OtherProjectP = styled.p`
+//   width: 100%;
+//   margin: 0;
+//   font-size: 40px;
+//   margin-bottom: 20px;
+// `;
+
+// const OtherProjectsDiv = styled.div`
+//   width: 100%;
+//   height: 100%;
+// `;
 
 function ProjectDetail(): React.ReactElement {
   const projectName = 'hello';
@@ -63,7 +70,7 @@ function ProjectDetail(): React.ReactElement {
         <ProjectTitleP>{projectName}</ProjectTitleP>
         <UsedStackP>{usedStack.toString()}</UsedStackP>
       </DetailInnerDiv>
-      <OtherProjectsDiv>
+      {/* <OtherProjectsDiv>
         <OtherProjectP>다른 프로젝트 보기</OtherProjectP>
         <CardGrid>
           <CardTemplate
@@ -117,7 +124,7 @@ function ProjectDetail(): React.ReactElement {
             usedStack={['Spring', 'AWS', 'GCP', 'MySQL']}
           />
         </CardGrid>
-      </OtherProjectsDiv>
+      </OtherProjectsDiv> */}
     </DetailTemplateDiv>
   );
 }

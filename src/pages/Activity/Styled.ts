@@ -21,8 +21,8 @@ export const SelectTitle = styled.div`
 `;
 
 export const CardGrid = styled.div`
-  height: 100%;
   width: 100%;
+  height: 600px;
   display: grid;
   grid-gap: 64px;
   grid-template-columns: repeat(4, 1fr);
