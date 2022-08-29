@@ -66,6 +66,32 @@ function StudyContent(): React.ReactElement {
               <span>백준 9867</span>
             </div>
           </ContentBox>
+          <ContentBox
+            onClick={handleOnClickCard}
+            title="종만북 알고리즘 스터디"
+            imgsrc="../../components/common/image/bibim_logo.png"
+            week="1주차"
+            leader="조윤혁"
+            year="2022"
+            language={['python', 'C++', 'JAVA']}
+          >
+            <div>
+              <span>백준 9867</span>
+            </div>
+          </ContentBox>
+          <ContentBox
+            onClick={handleOnClickCard}
+            title="종만북 알고리즘 스터디"
+            imgsrc="../../components/common/image/bibim_logo.png"
+            week="1주차"
+            leader="조윤혁"
+            year="2022"
+            language={['python', 'C++', 'JAVA']}
+          >
+            <div>
+              <span>백준 9867</span>
+            </div>
+          </ContentBox>
         </CardGrid>
       </>
     </ContentWrapper>

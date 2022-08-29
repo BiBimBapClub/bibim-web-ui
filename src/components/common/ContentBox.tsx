@@ -10,6 +10,10 @@ const BoxDiv = styled.div`
   flex-direction: column;
   align-items: start;
   margin-top: 100px;
+  padding: 15px;
+  background-color: #333333;
+  box-shadow: 3px 3px 15px #666666;
+  cursor: pointer;
 `;
 const ImgDiv = styled.img`
   width: 100%;
