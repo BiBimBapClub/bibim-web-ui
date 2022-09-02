@@ -75,7 +75,7 @@ function ProjectContent(): React.ReactElement {
           <ContentBox
             onClick={handleOnClickCard}
             title="비빔밥 홈페이지 만들기"
-            imgsrc="../../components/common/image/bibim_logo.png"
+            imgsrc="url('../image/iu.jpg')"
             week="8주간"
             leader="조윤혁"
             year="2022"
@@ -88,7 +88,7 @@ function ProjectContent(): React.ReactElement {
           <ContentBox
             onClick={handleOnClickCard}
             title="비빔밥 홈페이지 만들기"
-            imgsrc="../../components/common/image/bibim_logo.png"
+            imgsrc="../image/iu.jpg"
             week="8주간"
             leader="조윤혁"
             year="2022"
@@ -101,7 +101,7 @@ function ProjectContent(): React.ReactElement {
           <ContentBox
             onClick={handleOnClickCard}
             title="비빔밥 홈페이지 만들기"
-            imgsrc="../../components/common/image/bibim_logo.png"
+            imgsrc="../image/logo.png"
             week="8주간"
             leader="조윤혁"
             year="2022"
@@ -114,7 +114,7 @@ function ProjectContent(): React.ReactElement {
           <ContentBox
             onClick={handleOnClickCard}
             title="비빔밥 홈페이지 만들기"
-            imgsrc="../../components/common/image/bibim_logo.png"
+            imgsrc="../image/iu.jpg"
             week="8주간"
             leader="조윤혁"
             year="2022"

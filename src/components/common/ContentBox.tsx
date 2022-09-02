@@ -1,4 +1,5 @@
-import React from 'react';
+/* eslint-disable global-require */
+import React, { useState } from 'react';
 import styled from 'styled-components';
 
 const Fade = require('react-reveal/Fade');
@@ -15,9 +16,9 @@ const BoxDiv = styled.div`
   box-shadow: 3px 3px 15px #666666;
   cursor: pointer;
 `;
-const ImgDiv = styled.img`
+const ImgDiv = styled.div`
   width: 100%;
-  height: 40%;
+  height: 100%;
   display: flex;
 `;
 const WeekDiv = styled.div`
@@ -65,7 +66,6 @@ interface Props {
   language: string[];
   onClick: React.MouseEventHandler<HTMLDivElement>;
 }
-
 function ContentBox({
   imgsrc = '../image/bibim_logo.png',
   title,
@@ -82,11 +82,21 @@ function ContentBox({
       <LanguageSpace>{languageName}</LanguageSpace>
     )),
   );
-
+  const [imageState, setImageState] = useState('');
+  import(imgsrc).then((img) => {
+    setImageState(img);
+  });
   return (
     <BoxDiv onClick={onClick}>
       <Fade up>
-        <ImgDiv src={imgsrc} />
+        <ImgDiv
+          style={{
+            backgroundImage:
+              'url(' + require('../image/' + imgsrc + '.jpg') + ')',
+          }}
+        />
+        {imageState}
+        {imgsrc}
         <GenerationDiv>{year}</GenerationDiv>
         <WeekDiv>{week}</WeekDiv>
         <Title>{title}</Title>
