@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import React from 'react';
 import styled from 'styled-components';
-import { Modal } from 'antd';
 import {
   // CardGrid,
   DetailInnerDiv,
@@ -22,12 +21,7 @@ const UsedStackP = styled.p`
   overflow: hidden;
   text-overflow: ellipsis;
 `;
-const ProjectModal = styled(Modal)`
-  background-color: #444444;
-  width: 80vw;
-  height: 70vh;
-  border-radius: 10px;
-`;
+
 
 // const OtherProjectP = styled.p`
 //   width: 100%;
