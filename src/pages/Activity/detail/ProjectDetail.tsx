@@ -22,7 +22,6 @@ const UsedStackP = styled.p`
   text-overflow: ellipsis;
 `;
 
-
 // const OtherProjectP = styled.p`
 //   width: 100%;
 //   margin: 0;

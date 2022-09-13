@@ -11,6 +11,7 @@ function StudyDetail(): React.ReactElement {
   `;
   const DetailDiv = styled.div`
     display: flex;
+    flex-direction: column;
     width: 85%;
     height: 100%;
     margin-top: 40px;
@@ -33,6 +34,7 @@ function StudyDetail(): React.ReactElement {
   `;
   const FileBtn = styled.button`
     background-color: #00ff80;
+    cursor: pointer;
     color: white;
   `;
 
@@ -49,7 +51,7 @@ function StudyDetail(): React.ReactElement {
         <span style={{ fontWeight: 15 }}>활동 내용</span>
         <span>김진욱 김진욱 김진욱 김진욱</span>
       </Activity>
-      <FileBtn>파일첨부</FileBtn>
+      <FileBtn onClick={() => {}}>파일첨부</FileBtn>
     </DetailDiv>
   );
 }
