@@ -9,6 +9,8 @@ import {
 } from '../Styled';
 // import CardTemplate from './CardTemplate';
 
+const Zoom = require('react-reveal/Zoom');
+
 const ProjectTitleP = styled.p`
   width: 100%;
   font-size: 40px;
@@ -57,13 +59,14 @@ function ProjectDetail(): React.ReactElement {
     'k8s',
   ];
   return (
-    <DetailTemplateDiv>
-      <DetailRouteP>{`프로젝트 > ${projectName}`}</DetailRouteP>
-      <DetailInnerDiv>
-        <ProjectTitleP>{projectName}</ProjectTitleP>
-        <UsedStackP>{usedStack.toString()}</UsedStackP>
-      </DetailInnerDiv>
-      {/* <OtherProjectsDiv>
+    <Zoom bottom>
+      <DetailTemplateDiv>
+        <DetailRouteP>{`프로젝트 > ${projectName}`}</DetailRouteP>
+        <DetailInnerDiv>
+          <ProjectTitleP>{projectName}</ProjectTitleP>
+          <UsedStackP>{usedStack.toString()}</UsedStackP>
+        </DetailInnerDiv>
+        {/* <OtherProjectsDiv>
         <OtherProjectP>다른 프로젝트 보기</OtherProjectP>
         <CardGrid>
           <CardTemplate
@@ -118,7 +121,8 @@ function ProjectDetail(): React.ReactElement {
           />
         </CardGrid>
       </OtherProjectsDiv> */}
-    </DetailTemplateDiv>
+      </DetailTemplateDiv>
+    </Zoom>
   );
 }
 

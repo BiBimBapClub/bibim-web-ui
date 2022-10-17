@@ -19,6 +19,9 @@ const MemBox = styled.div`
   display: flex;
   flex-direction: row;
   background-color: white;
+  margin: 15px 20px 15px 20px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 15px;
 `;
 const MemText = styled.div`
   display: flex;
