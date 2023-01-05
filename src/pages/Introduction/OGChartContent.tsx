@@ -101,6 +101,42 @@ function OGChartContent(): React.ReactElement {
               <MemImg src="" />
             </MemBox>
           </CommonCol>
+          <CommonCol span={8}>
+            <MemBox>
+              <MemText>
+                <h5>회장</h5>
+                <h3>조윤혁</h3>
+                <h6>M 010-1234-5678</h6>
+                <h6>E Naverking@naver.com</h6>
+                <h6>G GithubKing@Gihub.com</h6>
+              </MemText>
+              <MemImg src="" />
+            </MemBox>
+          </CommonCol>
+          <CommonCol span={8}>
+            <MemBox>
+              <MemText>
+                <h5>회장</h5>
+                <h3>조윤혁</h3>
+                <h6>M 010-1234-5678</h6>
+                <h6>E Naverking@naver.com</h6>
+                <h6>G GithubKing@Gihub.com</h6>
+              </MemText>
+              <MemImg src="" />
+            </MemBox>
+          </CommonCol>
+          <CommonCol span={8}>
+            <MemBox>
+              <MemText>
+                <h5>회장</h5>
+                <h3>조윤혁</h3>
+                <h6>M 010-1234-5678</h6>
+                <h6>E Naverking@naver.com</h6>
+                <h6>G GithubKing@Gihub.com</h6>
+              </MemText>
+              <MemImg src="" />
+            </MemBox>
+          </CommonCol>
         </CommonRow>
       </>
     </ContentWrapper>

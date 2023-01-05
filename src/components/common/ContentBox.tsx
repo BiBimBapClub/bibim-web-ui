@@ -77,6 +77,7 @@ function ContentBox({
   language,
   onClick,
 }: Props): React.ReactElement {
+  // const image = require(imgsrc);
   const languageList = [];
   languageList.push(
     language.map((languageName) => (
