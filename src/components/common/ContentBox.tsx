@@ -89,12 +89,7 @@ function ContentBox({
   return (
     <BoxDiv onClick={onClick}>
       <Fade up>
-        <ImgDiv
-          style={{
-            backgroundImage:
-              'url(' + require('../image/' + imgsrc + '.jpg') + ')',
-          }}
-        />
+        <ImgDiv />
         {imageState}
         {imgsrc}
         <GenerationDiv>{year}</GenerationDiv>
