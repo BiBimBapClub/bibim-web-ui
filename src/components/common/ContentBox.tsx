@@ -1,6 +1,7 @@
 /* eslint-disable global-require */
 import React, { useState } from 'react';
 import styled from 'styled-components';
+import iu from '../image/iu.jpg';
 
 const Fade = require('react-reveal/Fade');
 
@@ -16,7 +17,7 @@ const BoxDiv = styled.div`
   box-shadow: 3px 3px 15px #666666;
   cursor: pointer;
 `;
-const ImgDiv = styled.div`
+const ImgDiv = styled.img`
   width: 100%;
   height: 100%;
   display: flex;
@@ -76,6 +77,7 @@ function ContentBox({
   language,
   onClick,
 }: Props): React.ReactElement {
+  // const image = require(imgsrc);
   const languageList = [];
   languageList.push(
     language.map((languageName) => (
@@ -89,7 +91,7 @@ function ContentBox({
   return (
     <BoxDiv onClick={onClick}>
       <Fade up>
-        <ImgDiv />
+        <ImgDiv src={iu} />
         {imageState}
         {imgsrc}
         <GenerationDiv>{year}</GenerationDiv>

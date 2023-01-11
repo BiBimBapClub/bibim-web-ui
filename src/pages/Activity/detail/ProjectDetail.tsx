@@ -1,7 +1,6 @@
 /* eslint-disable no-console */
 import React from 'react';
 import styled from 'styled-components';
-import { Modal } from 'antd';
 import {
   // CardGrid,
   DetailInnerDiv,
@@ -9,6 +8,8 @@ import {
   DetailTemplateDiv,
 } from '../Styled';
 // import CardTemplate from './CardTemplate';
+
+const Zoom = require('react-reveal/Zoom');
 
 const ProjectTitleP = styled.p`
   width: 100%;
@@ -21,12 +22,6 @@ const UsedStackP = styled.p`
   font-size: 20px;
   overflow: hidden;
   text-overflow: ellipsis;
-`;
-const ProjectModal = styled(Modal)`
-  background-color: #444444;
-  width: 80vw;
-  height: 70vh;
-  border-radius: 10px;
 `;
 
 // const OtherProjectP = styled.p`
@@ -64,13 +59,14 @@ function ProjectDetail(): React.ReactElement {
     'k8s',
   ];
   return (
-    <DetailTemplateDiv>
-      <DetailRouteP>{`프로젝트 > ${projectName}`}</DetailRouteP>
-      <DetailInnerDiv>
-        <ProjectTitleP>{projectName}</ProjectTitleP>
-        <UsedStackP>{usedStack.toString()}</UsedStackP>
-      </DetailInnerDiv>
-      {/* <OtherProjectsDiv>
+    <Zoom bottom>
+      <DetailTemplateDiv>
+        <DetailRouteP>{`프로젝트 > ${projectName}`}</DetailRouteP>
+        <DetailInnerDiv>
+          <ProjectTitleP>{projectName}</ProjectTitleP>
+          <UsedStackP>{usedStack.toString()}</UsedStackP>
+        </DetailInnerDiv>
+        {/* <OtherProjectsDiv>
         <OtherProjectP>다른 프로젝트 보기</OtherProjectP>
         <CardGrid>
           <CardTemplate
@@ -125,7 +121,8 @@ function ProjectDetail(): React.ReactElement {
           />
         </CardGrid>
       </OtherProjectsDiv> */}
-    </DetailTemplateDiv>
+      </DetailTemplateDiv>
+    </Zoom>
   );
 }
 

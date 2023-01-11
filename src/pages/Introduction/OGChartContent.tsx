@@ -19,6 +19,9 @@ const MemBox = styled.div`
   display: flex;
   flex-direction: row;
   background-color: white;
+  margin: 15px 20px 15px 20px;
+  padding: 10px 10px 10px 10px;
+  border-radius: 15px;
 `;
 const MemText = styled.div`
   display: flex;
@@ -86,6 +89,42 @@ function OGChartContent(): React.ReactElement {
           <BtnCol span={9} />
         </BtnRow>
         <CommonRow>
+          <CommonCol span={8}>
+            <MemBox>
+              <MemText>
+                <h5>회장</h5>
+                <h3>조윤혁</h3>
+                <h6>M 010-1234-5678</h6>
+                <h6>E Naverking@naver.com</h6>
+                <h6>G GithubKing@Gihub.com</h6>
+              </MemText>
+              <MemImg src="" />
+            </MemBox>
+          </CommonCol>
+          <CommonCol span={8}>
+            <MemBox>
+              <MemText>
+                <h5>회장</h5>
+                <h3>조윤혁</h3>
+                <h6>M 010-1234-5678</h6>
+                <h6>E Naverking@naver.com</h6>
+                <h6>G GithubKing@Gihub.com</h6>
+              </MemText>
+              <MemImg src="" />
+            </MemBox>
+          </CommonCol>
+          <CommonCol span={8}>
+            <MemBox>
+              <MemText>
+                <h5>회장</h5>
+                <h3>조윤혁</h3>
+                <h6>M 010-1234-5678</h6>
+                <h6>E Naverking@naver.com</h6>
+                <h6>G GithubKing@Gihub.com</h6>
+              </MemText>
+              <MemImg src="" />
+            </MemBox>
+          </CommonCol>
           <CommonCol span={8}>
             <MemBox>
               <MemText>
