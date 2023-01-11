@@ -6,7 +6,7 @@ import styled, { keyframes } from 'styled-components';
 function StudyDetail(): React.ReactElement {
   const spread = keyframes`
     from {
-      width: 0vw;
+      width: 100%;
       height: 0px;
       font-size: 0px;
       color: rgba(0,0,0,0);
@@ -16,8 +16,8 @@ function StudyDetail(): React.ReactElement {
     }
     to {
       width: 100%;
-      height: 100%;
-      font-size: 10px;
+      height: 515px;
+      font-size: 0px;
       color: white;
     }
   `;
@@ -49,7 +49,7 @@ from {
 to {
   width: 100%;
   height: 100%;
-  font-size: 50px;
+  font-size: 0px;
   color: white;
 }`;
   const spread4 = keyframes`
@@ -59,43 +59,46 @@ from {
   font-size: 0px;
   color: rgba(0,0,0,0);
   background-color: rgba(0,0,0,0);
+  border-color: rgba(0,0,0,0);
   display: none;
 
 }
 to {
-  width: 200px;
-  height: 100%;
+  width: 0vw;
+  height: 0px;
   font-size: 0px;
-
-  color: 00ff80;
+  background-color: rgba(0,0,0,0);
+  color: rgba(0,0,0,0);
+  border-color: rgba(0,0,0,0);
+  display: none;
 }
 `;
   const DetailDiv = styled.div`
     display: flex;
     flex-direction: column;
     padding: 30px 20px 20px 60px;
-    width: 85vw;
-    height: 100%;
+    width: 100%;
+    height: 515px;
     margin-top: 40px;
     margin-bottom: 40px;
     background-color: #424242;
     color: white;
-    animation: ${spread} 1s ease-in;
+    animation: ${spread} 2s ease-in;
   `;
   const Title = styled.div`
     font-size: 50px;
     font-weight: 10px;
     color: white;
-    animation: ${spread3} 1s ease-in;
+    animation: ${spread3} 2s ease-in;
   `;
   const PeopleCheck = styled.div`
     font-size: 20px;
     margin-bottom: 10px;
-    animation: ${spread2} 1s ease-in;
+    animation: ${spread2} 2s ease-in;
   `;
   const Activity = styled.div`
     font-size: 20px;
-    animation: ${spread2} 1s ease-in;
+    animation: ${spread2} 2s ease-in;
   `;
   const FileBtn = styled.button`
     background-color: #00ff80;
@@ -104,7 +107,7 @@ to {
     align-self: center;
     cursor: pointer;
     color: white;
-    animation: ${spread4} 1s ease-in;
+    animation: ${spread4} 2s ease-in;
   `;
   // const handleButtonClick: MouseEventHandler<HTMLDivElement> = (e) => {
   //   const { target } = e;
