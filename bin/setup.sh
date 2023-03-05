@@ -35,7 +35,7 @@ echo "=============================================="
 cd /etc/nginx/sites-enabled
 sudo rm -rf default
 
-sudo cp /home/ubuntu/SugarFree/.config/front/default .
+sudo cp /home/ubuntu/bibim-web-ui/.config/default .
 
 echo "=============================================="
 echo "ssl Certifications"
