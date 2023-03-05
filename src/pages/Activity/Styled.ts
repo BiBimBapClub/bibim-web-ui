@@ -1,6 +1,8 @@
 import styled from 'styled-components';
 
 export const ClassificationDiv = styled.div`
+  display: flex;
+  flex-direction: row;
   width: 100%;
   height: 95px;
   margin-bottom: 20px;
@@ -9,15 +11,32 @@ export const ClassificationDiv = styled.div`
 
 export const SelectDiv = styled.div`
   display: flex;
-  width: 100%;
+  width: 70%;
   margin: 20px 0;
   height: 55px;
+`;
+export const WriteDiv = styled.div`
+  display: flex;
+  width: 20%;
+  margin: 20px 0;
+  height: 55px;
+  
 `;
 
 export const SelectTitle = styled.div`
   width: 45px;
   height: 55px;
   line-height: 55px;
+`;
+
+export const WriteBtn = styled.div`
+  display: flex;
+  width: 45px;
+  height: 55px;
+  line-height: 55px;
+  cursor: pointer;
+  border: 4px;
+  border-color: white;
 `;
 
 export const CardGrid = styled.div`
