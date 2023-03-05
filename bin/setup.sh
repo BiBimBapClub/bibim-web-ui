@@ -1,3 +1,6 @@
+#!/bin/bash
+
+#update apt
 sudo apt-get install update
 
 #install git, nginx, node, yarn, certbot
@@ -19,7 +22,7 @@ echo "=============================================="
 echo "git Pulling"
 echo "=============================================="
 # git clone repository
-cd bibim-web-ui
+cd SugarFree
 git reset --hard
 git fetch
 git pull
@@ -32,7 +35,11 @@ echo "=============================================="
 cd /etc/nginx/sites-enabled
 sudo rm -rf default
 
-sudo cp /home/ubuntu/bibim-web-ui/.config/default .
+sudo cp /home/ubuntu/SugarFree/.config/front/default .
+
+echo "=============================================="
+echo "ssl Certifications"
+echo "=============================================="
 
 #certbot을 통해 ssl 적용
 sudo apt-get install -y snapd
@@ -41,12 +48,17 @@ sudo apt-get remove -y certbot
 sudo snap install --classic certbot
 sudo ln -s /snap/bin/certbot /usr/bin/certbot
 
+echo "=============================================="
+echo "Building Web Projects"
+echo "=============================================="
+
 cd /home/ubuntu/bibim-web-ui
 yarn install
 yarn build
 
+echo "=============================================="
+echo "ssl Deploy"
+echo "=============================================="
+
 sudo certbot --nginx
-
-
-
 sudo systemctl restart nginx
