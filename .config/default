@@ -1,6 +1,6 @@
 server {
     listen 80;
-    server_name   dev.bibim-bap.com;
+    server_name   bibim-bap.com;
     location / {
         root   /home/ubuntu/bibim-web-ui/build;
         index  index.html index.htm;
