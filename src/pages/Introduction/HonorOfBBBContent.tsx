@@ -4,59 +4,84 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 import Dropdown from '../../components/common/Dropdown';
 import ContentWrapper from '../../components/common/ContentWrapper';
-import IU from '../../components/image/iu.jpg';
+import JoDH from '../../components/image/JoDH.png';
+import JoYH from '../../components/image/JoYH.jpeg';
+import ProfileBasic from '../../components/image/ProfileBasic.png';
 
 const HonorList = [
   [
     'NO1',
-    IU,
+    JoDH,
     '17 컴공',
     '조대현',
-    '깃허브',
+    '기술자문, 우아한 형제들 입사',
   ],
   [
-    'Title',
-    '../image/iu.jpg',
+    'NO2',
+    JoYH,
+    '18 컴공',
+    '조윤혁',
+    '홈페이지 창설, 비빔밥 재활성화',
+  ],
+  [
+    'NO3',
+    ProfileBasic,
     '컴퓨터 공학과 학번',
     '이름',
     '깃허브',
   ],
   [
-    'Title',
-    '../image/iu.jpg',
+    'NO4',
+    ProfileBasic,
     '컴퓨터 공학과 학번',
     '이름',
     '깃허브',
   ],
   [
-    'Title',
-    '../image/iu.jpg',
+    'NO5',
+    ProfileBasic,
     '컴퓨터 공학과 학번',
     '이름',
     '깃허브',
   ],
   [
-    'Title',
-    '../image/iu.jpg',
+    'NO6',
+    ProfileBasic,
     '컴퓨터 공학과 학번',
     '이름',
     '깃허브',
   ],
   [
-    'Title',
-    '../image/iu.jpg',
-    '컴퓨터 공학과 학번',
-    '이름',
-    '깃허브',
-  ],
-  [
-    'Title',
-    '../image/iu.jpg',
+    'NO7',
+    ProfileBasic,
     '컴퓨터 공학과 학번',
     '이름',
     '깃허브',
   ],
 ];
+const HonorSpace = styled.div`
+  background-color: rgba(255,255,255,0.7);
+  display: flex;
+  width: 420px;
+  height: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+`;
+const BBBImage = styled.img`
+  display: flex;
+  height: 150px;
+`;
+const HollowSpace = styled.div`
+  display: flex;
+  /* background-color: rgba(0, 0, 0, 0);*/
+  background-color: black;
+
+  width: 30px;
+  height: 100%;
+`;
+
 const CommonRow = styled(Row)`
   width: 100%;
 `;
@@ -74,8 +99,9 @@ const ButtonAll = styled(Button)`
   margin: 0 0 0 0;
   width: 155px;
   height: 55px;
-  background-color: #00ff80;
+  background-color: #00B359;
   color: white;
+  font-size: 20px;
   border-radius: 30px;
   text-align: center;
 `;
@@ -83,8 +109,9 @@ const ButtonYear = styled(Button)`
   margin-left: 130px;
   width: 155px;
   height: 55px;
-  background-color: #00ff80;
+  background-color: #00B359;
   color: white;
+  font-size: 20px;
   border-radius: 30px;
   text-align: center;
 `;
@@ -107,28 +134,6 @@ const HonorBox = styled.div`
   font-size: 40px;
   width: 450px;
   height: 100%;
-`;
-const HonorSpace = styled.div`
-  background-color: rgba(255,255,255,0.7);
-  display: flex;
-  width: 420px;
-  height: 100%;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-`;
-const HollowSpace = styled.div`
-  display: flex;
-  /* background-color: rgba(0, 0, 0, 0);*/
-  background-color: black;
-
-  width: 30px;
-  height: 100%;
-`;
-const BBBImage = styled.img`
-  display: flex;
-  height: 150px;
 `;
 
 function HonorOfBBBContent(): React.ReactElement {

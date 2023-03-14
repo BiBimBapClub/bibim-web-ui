@@ -1,8 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Col, Row } from 'antd';
 import ContentWrapper from '../../components/common/ContentWrapper';
 // import styled from 'styled-components';
+import openStack from '../../components/image/OpenStack1.jpeg';
+import hackathon from '../../components/image/Hackathon1.jpeg';
+import opParty from '../../components/image/OPParty.jpeg';
+import endingParty from '../../components/image/EndingParty.png';
+import algorithmStudy from '../../components/image/AlgorithmStudy.jpeg';
+
 const Fade = require('react-reveal/Fade');
 
 const WholeDiv = styled.div`
@@ -68,18 +74,42 @@ const ActivityTextArr = [
 
 function ActivityIntroduction(): React.ReactElement {
   // 여기서 페이지 변경하는 로직 만들면 되지 않을까
+  const ActivityImageArr = [
+    openStack,
+    hackathon,
+    opParty,
+    endingParty,
+    algorithmStudy,
+    hackathon,
+    openStack,
+  ];
   const ActivityDivArr: any[] = [];
-
+  const [hoverImage, setHoverImage] = useState(<div />);
+  const handleHover = (index : number) => {
+    // 해당 index에 대한 hover 액션 처리
+    console.log(index);
+    setHoverImage(<img alt="" src={ActivityImageArr[index]} />);
+  };
+  const handleHoverExit = (index : number) => {
+    // 해당 index에 대한 hover 액션 종료 처리
+    console.log(index);
+    setHoverImage(<div />);
+  };
   for (let i = 0; i < ActivityTextArr.length; i += 1) {
     if (i % 2 === 0) {
       ActivityDivArr.push(
-        <BarRow>
+        <BarRow
+          key={i}
+          onMouseEnter={() => handleHover(i)}
+          onMouseLeave={() => handleHoverExit(i)}
+        >
           <Col span={16}>
             <Fade left>
               <BarLeft>
                 <CenterH1>{ActivityTextArr[i]}</CenterH1>
                 <GreenBall />
               </BarLeft>
+              {hoverImage && <div>{hoverImage}</div>}
             </Fade>
           </Col>
           <Col span={8} />
@@ -87,7 +117,14 @@ function ActivityIntroduction(): React.ReactElement {
       );
     } else {
       ActivityDivArr.push(
-        <BarRow>
+        <BarRow onMouseOver={() => {
+          setHoverImage(
+            <div>
+              <img alt="" src={ActivityImageArr[i]} />
+            </div>,
+          );
+        }}
+        >
           <Col span={16} offset={8}>
             <Fade right>
               <BarRight>
