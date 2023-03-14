@@ -4,10 +4,10 @@ import { Col, Row } from 'antd';
 import logo from '../image/bibim_logo.png';
 import SubNav from './SubNav';
 import HomeContent from '../../pages/Home/HomeContent';
-import StudyContent from '../../pages/Activity/StudyContent';
-import ArchiveContent from '../../pages/InfoForum/ArchiveContent';
+// import StudyContent from '../../pages/Activity/StudyContent';
+// import ArchiveContent from '../../pages/InfoForum/ArchiveContent';
 import IntroductionContent from '../../pages/Introduction/IntroductionContent';
-import ReviewContent from '../../pages/Review/ReviewContent';
+// import ReviewContent from '../../pages/Review/ReviewContent';
 
 const FlexBox = styled.div`
   margin: 0 0 0 0;
@@ -15,10 +15,21 @@ const FlexBox = styled.div`
   width: 100vw;
   padding: 0 0 0 0;
   display: flex;
-  border-bottom: 2px solid white;
+  border-bottom: 2px solid rgba(255,255,255,0.8);
   flex-direction: row;
   align-items: center;
   justify-content: center;
+`;
+const LogoCol = styled(Col)`
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 0px;
+  padding-top: 5px;
+  margin-bottom: 0px;
+  text-align: center;
+  cursor: pointer;
 `;
 const NavCol = styled(Col)`
   &:hover,
@@ -26,14 +37,19 @@ const NavCol = styled(Col)`
     background-color: #ffffff;
     color: #222222;
     cursor: pointer;
+    transition: background 0.19s ease-in;
   }
-  height: 80px;
+  height: 50px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 0px;
+  padding-top: 5px;
   margin-bottom: 0px;
   text-align: center;
+`;
+const LogoImg = styled.img`
+  height: 70%;
 `;
 const NavRow = styled(Row)`
   width: 100%;
@@ -78,14 +94,14 @@ function Nav({ setContent }: Props): React.ReactElement {
     <div>
       <FlexBox>
         <NavRow justify="start">
-          <NavCol
+          <LogoCol
             span={1}
             onClick={() => {
               setContent(<HomeContent />);
             }}
           >
-            <img src={logo} alt="" />
-          </NavCol>
+            <LogoImg src={logo} alt="" />
+          </LogoCol>
           <NavCol
             span={3}
             offset={8}
@@ -112,35 +128,35 @@ function Nav({ setContent }: Props): React.ReactElement {
           <NavCol
             span={3}
             onMouseOver={() => {
-              setCheckHovering(3);
+              // setCheckHovering(3);
             }}
             onClick={() => {
-              setContent(<StudyContent />);
+              // setContent(<StudyContent />);
             }}
           >
-            동아리 활동
+            준비중....
           </NavCol>
           <NavCol
             span={3}
             onMouseOver={() => {
-              setCheckHovering(4);
+              // setCheckHovering(4);
             }}
             onClick={() => {
-              setContent(<ReviewContent />);
+              // setContent(<ReviewContent />);
             }}
           >
-            후기
+            준비중....
           </NavCol>
           <NavCol
             span={3}
             onMouseOver={() => {
-              setCheckHovering(5);
+              // setCheckHovering(5);
             }}
             onClick={() => {
-              setContent(<ArchiveContent />);
+              // setContent(<ArchiveContent />);
             }}
           >
-            정보 광장
+            준비중....
           </NavCol>
         </NavRow>
       </FlexBox>

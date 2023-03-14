@@ -15,6 +15,7 @@ const PageTitle = styled.div`
   height: 100%;
   font-size: 100px;
   color: #00ff80;
+  text-shadow:1px 1px white, -1px -1px #666;
 `;
 const SubTitle = styled.div`
   font-size: 24px;

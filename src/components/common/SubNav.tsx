@@ -15,9 +15,10 @@ import ReviewContent from '../../pages/Review/ReviewContent';
 const SubNavCol = styled(Col)`
   &:hover,
   &:focus {
-    background-color: #000000;
+    background-color: rgba(0,0,0,0.2);
     color: #eeeeee;
     cursor: pointer;
+    transition: background 0.19s ease-in;
   }
   height: 100%;
   background-color: #ffffff;
@@ -30,7 +31,7 @@ const SubNavCol = styled(Col)`
 `;
 const SubNavRow = styled(Row)`
   width: 100vw;
-  height: 150px;
+  height: 50px;
 `;
 interface Props {
   number: number;

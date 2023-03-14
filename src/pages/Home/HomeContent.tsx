@@ -8,6 +8,7 @@ const TitleDiv = styled.div`
   line-height: 100%;
   font-size: 150px;
   color: #00ff80;
+  text-shadow:2px 2px white, -2px -2px #666;
   display: flex;
 `;
 
@@ -31,8 +32,11 @@ function Content(): React.ReactElement {
   return (
     <Fade up>
       <HomeDiv>
-        <TitleDiv>BiBiMBAP</TitleDiv>
-        <SubTitleDiv>어쩌고 저쩌고 어쩌고 저쩌고</SubTitleDiv>
+        <TitleDiv>
+          BiBiMBAP
+          <small>beta</small>
+        </TitleDiv>
+        <SubTitleDiv>당신은 오늘부터 코딩 고수</SubTitleDiv>
         <SubTitleDiv style={{ fontSize: '24px' }}>
           건국대학교 컴퓨터공학부 학술동아리 비빔밥
         </SubTitleDiv>

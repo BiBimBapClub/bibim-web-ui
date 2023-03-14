@@ -31,6 +31,16 @@ const ContentCol = styled(Col)`
   width: 100vw;
   height: 100%;
 `;
+const BwBottomGradient = styled.div`
+  position: fixed;
+  display: flex;
+  bottom: 0px;
+  width: 99%;
+  height:6vh;
+  background: linear-gradient( to top, #EEEEEE,  #232327 );
+  opacity: 0.7;
+  ;
+`;
 
 function App(): React.ReactElement {
   const [content, setContent] = useState(<HomeContent />);
@@ -56,6 +66,7 @@ function App(): React.ReactElement {
           </ContentCol>
         </Row>
       </BackGround>
+      <BwBottomGradient />
     </div>
   );
 }

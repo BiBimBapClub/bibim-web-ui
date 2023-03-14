@@ -4,69 +4,56 @@ import styled from 'styled-components';
 import Slider from 'react-slick';
 import Dropdown from '../../components/common/Dropdown';
 import ContentWrapper from '../../components/common/ContentWrapper';
+import IU from '../../components/image/iu.jpg';
 
 const HonorList = [
   [
+    'NO1',
+    IU,
+    '17 컴공',
+    '조대현',
+    '깃허브',
+  ],
+  [
     'Title',
-    'image link',
+    '../image/iu.jpg',
     '컴퓨터 공학과 학번',
     '이름',
-    '연락처',
-    '이메일',
     '깃허브',
   ],
   [
-    'Title1',
-    'image link',
+    'Title',
+    '../image/iu.jpg',
     '컴퓨터 공학과 학번',
     '이름',
-    '연락처',
-    '이메일',
     '깃허브',
   ],
   [
-    'Title2',
-    'image link',
+    'Title',
+    '../image/iu.jpg',
     '컴퓨터 공학과 학번',
     '이름',
-    '연락처',
-    '이메일',
     '깃허브',
   ],
   [
-    'Title3',
-    'image link',
+    'Title',
+    '../image/iu.jpg',
     '컴퓨터 공학과 학번',
     '이름',
-    '연락처',
-    '이메일',
     '깃허브',
   ],
   [
-    'Title4',
-    'image link',
+    'Title',
+    '../image/iu.jpg',
     '컴퓨터 공학과 학번',
     '이름',
-    '연락처',
-    '이메일',
     '깃허브',
   ],
   [
-    'Title5',
-    'image link',
+    'Title',
+    '../image/iu.jpg',
     '컴퓨터 공학과 학번',
     '이름',
-    '연락처',
-    '이메일',
-    '깃허브',
-  ],
-  [
-    'Title6',
-    'image link',
-    '컴퓨터 공학과 학번',
-    '이름',
-    '연락처',
-    '이메일',
     '깃허브',
   ],
 ];
@@ -122,7 +109,7 @@ const HonorBox = styled.div`
   height: 100%;
 `;
 const HonorSpace = styled.div`
-  background-color: white;
+  background-color: rgba(255,255,255,0.7);
   display: flex;
   width: 420px;
   height: 100%;
@@ -130,7 +117,6 @@ const HonorSpace = styled.div`
   align-items: center;
   justify-content: center;
   text-align: center;
-  border-radius: 40px;
 `;
 const HollowSpace = styled.div`
   display: flex;
@@ -139,6 +125,10 @@ const HollowSpace = styled.div`
 
   width: 30px;
   height: 100%;
+`;
+const BBBImage = styled.img`
+  display: flex;
+  height: 150px;
 `;
 
 function HonorOfBBBContent(): React.ReactElement {
@@ -162,13 +152,10 @@ function HonorOfBBBContent(): React.ReactElement {
       <HonorBox>
         <HonorSpace>
           <h3>{HonorList[i][0]}</h3>
-          <h3>{HonorList[i][1]}</h3>
+          <BBBImage src={HonorList[i][1]} />
           <div>{HonorList[i][2]}</div>
           <h5>{HonorList[i][3]}</h5>
-          <h2>{HonorList[i][4]}</h2>
-          <h6>{HonorList[i][5]}</h6>
-          <h6>{HonorList[i][6]}</h6>
-          <h6>{HonorList[i][7]}</h6>
+          <h6>{HonorList[i][4]}</h6>
         </HonorSpace>
         <HollowSpace />
       </HonorBox>,

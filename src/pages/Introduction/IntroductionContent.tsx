@@ -4,6 +4,28 @@ import styled from 'styled-components';
 import ContentWrapper from '../../components/common/ContentWrapper';
 
 // const Zoom = require('react-reveal/Zoom');
+// function SampleNextArrow(props: CustomArrowProps) {
+//   const { className, style, onClick } = props;
+//   return (
+//     <div
+//       className={className}
+//       style={{ ...style, display: "block", background: "red" }}
+//       onClick={onClick}
+//     />
+//   );
+// }
+
+// function SamplePrevArrow(props: CustomArrowProps) {
+//   const { className, style, onClick } = props;
+//   return (
+//     <div
+//       className={className}
+//       style={{ ...style, display: "block", background: "green" }}
+//       onClick={onClick}
+//     />
+//   );
+// }
+
 const Bounce = require('react-reveal/Bounce');
 
 const Carousel = styled(Slider)`
@@ -40,26 +62,31 @@ const YearTotalFlex = styled.div`
   justify-content: center;
 `;
 const YearSpace = styled.div`
+  display: flex;
+  flex-direction: column;
   width: 240px;
-  height: 540px;
-  padding-left: 80px;
+  align-items: center;
   z-index: 3;
 `;
 const WhiteColUP = styled.div`
   position: absolute;
-  margin-top: 120px;
-  margin-left: 70px;
-  width: 6px;
-  height: 80px;
-  border-left: 3px dotted white;
+  margin-top: 185px;
+  width: 15px; /* 사이즈 */
+  height: 15px; /* 사이즈 */
+  border-top: 5px solid #FFFFFF; /* 선 두께 */
+  border-right: 5px solid #FFFFFF; /* 선 두께 */
+  border-radius: 1px;
+  transform: rotate(315deg); /* 각도 */
 `;
 const WhiteColDOWN = styled.div`
   position: absolute;
-  margin-bottom: 120px;
-  margin-left: 70px;
-  width: 6px;
-  height: 80px;
-  border-left: 3px dotted white;
+  margin-top: 345px;
+  width: 15px; /* 사이즈 */
+  height: 15px; /* 사이즈 */
+  border-top: 5px solid #FFFFFF; /* 선 두께 */
+  border-right: 5px solid #FFFFFF; /* 선 두께 */
+  border-radius: 1px;
+  transform: rotate(135deg);
 `;
 const YearText = styled.div`
   width: 240px;
@@ -83,18 +110,17 @@ const YearNum = styled.div`
   font-size: 23px;
 `;
 
-const YearArr = [2010, 2015, 2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023];
+const YearArr = [2010, 2015, 2016, 2017, 2018, 2019, 2020, 2022, 2023];
 const HistoryArr = [
-  '동아리 설립, SKT 공모전 참여 안드로이드, FAlinux 세미나 참여',
-  '안전 귀가 택시 앱 개발',
-  'SKT 공모전 참여 안드로이드, FALinux 세미나 참여',
-  '안전 귀가 택시 앱 개발',
-  'SKT 공모전 참여 안드로이드, FAlinux 세미나 참여',
-  '안전 귀가 택시 앱 개발',
-  '동아리 설립, SKT 공모전 참여 안드로이드, FAlinux 세미나 참여',
-  '코로나 비대면 스터디',
-  '동아리 설립, SKT 공모전 참여 안드로이드, FAlinux 세미나 참여',
-  '코로나 비대면 스터디',
+  '• 동아리 설립 •SKT 공모전 참여 •안드로이드 FAlinux 세미나 참여',
+  '• 안전 귀가 택시 앱 개발 •Google Developers Hackathon Korea 참여 • IC칩을 활용한 스마트 OTP제안 프로그램 • 스마트워치 활용 헬스케어앱 • 뇌파 이용 졸음 운전 예방 앱',
+  '• VR을 활용한 소화기 사용 교육 프로젝트 • 그리드 컴퓨팅을 활용한 웹서비스 사용성 • IoT 기반 아이 돌봄 서비스 개발 • 머신러닝 활용 IoT 보안 솔루션 • 정의 설계 경진대회 장려상',
+  '• 비빔밥 소속 선배들의 취업 간담회 • MFC 기반 부루마블 게임 개발 • 여행 가이드 매칭 서비스 개발 • 시각 장애니 경로 안내 네비게이션 개발 • 공공 데이터 활용 지진대비처 안내 서비스 개발',
+  '• 공과대학으로 소속변경 • 동아리 내 부서 편성 • 제 1회 동아리 공모전 진행',
+  '• 제 2회 공모전 진행 • 외부 코딩 봉사활동 진행 • 단체 VR EXPO 참관 •제 3회 공모전 진행',
+  '• 코로나 특수 비대면 위주 스터디 프로젝트 활동',
+  '• 비빔밥 해커톤 개최 • 오픈스택X비빔밥 스터디',
+  '• 현대 모비스 해커톤 참여',
 ];
 function IntroductionContent(): React.ReactElement {
   // 여기서 페이지 변경하는 로직 만들면 되지 않을까
@@ -145,6 +171,7 @@ function IntroductionContent(): React.ReactElement {
             slidesPerRow={1}
             slidesToScroll={1}
             speed={500}
+            // nextArrow={<SlickArrowR/>}
           >
             {YearDivArr}
           </Carousel>

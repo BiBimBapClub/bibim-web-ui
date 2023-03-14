@@ -1,7 +1,7 @@
 /* eslint-disable no-console */
-import React, { ChangeEventHandler, MouseEventHandler, useState } from 'react';
+import React, { ChangeEventHandler, useState } from 'react';
 import ContentWrapper from '../../components/common/ContentWrapper';
-import ContentBox from '../../components/common/ContentBox';
+import CardList from './detail/CardList';
 import Dropdown from '../../components/common/Dropdown';
 import StudyDetail from './detail/StudyDetail';
 import { CardGrid, ClassificationDiv, SelectDiv, SelectTitle, WriteDiv, WriteBtn } from './Styled';
@@ -13,7 +13,7 @@ function StudyContent(): React.ReactElement {
   const [currentSelectYear, setCurrentSelectYear] = useState('');
   const [currentSelectField, setCurrentSelectField] = useState('');
   // const [clickedCard, setClickedCard] = useState('');
-  const [cardDetail, setCardDetail] = useState(<p> </p>);
+  // const [cardDetail, setCardDetail] = useState(<p> </p>);
   const handleOnChangeYear: ChangeEventHandler<HTMLSelectElement> = (e) => {
     const { target } = e;
     console.log(currentSelectYear);
@@ -34,13 +34,13 @@ function StudyContent(): React.ReactElement {
     }
   };
 
-  const handleOnClickCard: MouseEventHandler<HTMLDivElement> = (e) => {
-    const { currentTarget } = e;
-    console.log(currentTarget);
-    setCardDetail(<StudyDetail />);
-    // router로 작동되는게 바람직할 것으로 보임.
-    // 글마다 글 id가 있어서 div에 할당했다가 클릭했을 때, id로 db 조회해서 세부 정보 얻어오는 방식으로 만들어야할 듯.
-  };
+  // const handleOnClickCard: MouseEventHandler<HTMLDivElement> = (e) => {
+  //   const { currentTarget } = e;
+  //   console.log(currentTarget);
+  //   setCardDetail(<StudyDetail />);
+  //   // router로 작동되는게 바람직할 것으로 보임.
+  //   // 글마다 글 id가 있어서 div에 할당했다가 클릭했을 때, id로 db 조회해서 세부 정보 얻어오는 방식으로 만들어야할 듯.
+  // };
   return (
     <ContentWrapper
       title="스터디"
@@ -56,49 +56,9 @@ function StudyContent(): React.ReactElement {
           </SelectDiv>
           <WriteDiv><WriteBtn>글쓰기</WriteBtn></WriteDiv>
         </ClassificationDiv>
-        {cardDetail}
+        <StudyDetail />
         <CardGrid>
-          <div className="boardList-header">전체 게시물</div>
-          <div className="boardList-body" />
-          <ContentBox
-            onClick={handleOnClickCard}
-            title="종만북 알고리즘 스터디"
-            imgsrc="../../components/common/image/bibim_logo.png"
-            week="1주차"
-            leader="조윤혁"
-            year="2022"
-            language={['python', 'C++', 'JAVA']}
-          >
-            <div>
-              <span>백준 9867</span>
-            </div>
-          </ContentBox>
-          <ContentBox
-            onClick={handleOnClickCard}
-            title="종만북 알고리즘 스터디"
-            imgsrc="../../components/common/image/bibim_logo.png"
-            week="1주차"
-            leader="조윤혁"
-            year="2022"
-            language={['python', 'C++', 'JAVA']}
-          >
-            <div>
-              <span>백준 9867</span>
-            </div>
-          </ContentBox>
-          <ContentBox
-            onClick={handleOnClickCard}
-            title="종만북 알고리즘 스터디"
-            imgsrc="../../components/common/image/bibim_logo.png"
-            week="1주차"
-            leader="조윤혁"
-            year="2022"
-            language={['python', 'C++', 'JAVA']}
-          >
-            <div>
-              <span>백준 9867</span>
-            </div>
-          </ContentBox>
+          <CardList />
         </CardGrid>
       </>
     </ContentWrapper>
