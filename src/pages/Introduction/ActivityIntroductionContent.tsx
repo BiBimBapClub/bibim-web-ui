@@ -85,24 +85,25 @@ function ActivityIntroduction(): React.ReactElement {
   ];
   const ActivityDivArr: any[] = [];
   const [hoverImage, setHoverImage] = useState(<div />);
-  const handleHover = (index : number) => {
-    // 해당 index에 대한 hover 액션 처리
-    console.log(index);
-    setHoverImage(<img alt="" src={ActivityImageArr[index]} />);
-  };
-  const handleHoverExit = (index : number) => {
-    // 해당 index에 대한 hover 액션 종료 처리
-    console.log(index);
-    setHoverImage(<div />);
-  };
+  // const handleHover = (index : number) => {
+  //   // 해당 index에 대한 hover 액션 처리
+  //   console.log(index);
+  //   setHoverImage(<img alt="" src={ActivityImageArr[index]} />);
+  // };
+  // const handleHoverExit = (index : number) => {
+  //   // 해당 index에 대한 hover 액션 종료 처리
+  //   console.log(index);
+  //   setHoverImage(<div />);
+  // };
   for (let i = 0; i < ActivityTextArr.length; i += 1) {
     if (i % 2 === 0) {
       ActivityDivArr.push(
-        <BarRow
-          key={i}
-          onMouseEnter={() => handleHover(i)}
-          onMouseLeave={() => handleHoverExit(i)}
-        >
+        // <BarRow
+        //   key={i}
+        //   onMouseEnter={() => handleHover(i)}
+        //   onMouseLeave={() => handleHoverExit(i)}
+        // >
+        <BarRow>
           <Col span={16}>
             <Fade left>
               <BarLeft>
