@@ -83,22 +83,22 @@ to {
     margin-bottom: 40px;
     background-color: #424242;
     color: white;
-    animation: ${spread} 2s ease-in;
+    animation: ${spread} 0.5s ease-in;
   `;
   const Title = styled.div`
     font-size: 50px;
     font-weight: 10px;
     color: white;
-    animation: ${spread3} 2s ease-in;
+    animation: ${spread3} 0.5s ease-in;
   `;
   const PeopleCheck = styled.div`
     font-size: 20px;
     margin-bottom: 10px;
-    animation: ${spread2} 2s ease-in;
+    animation: ${spread2} 0.5s ease-in;
   `;
   const Activity = styled.div`
     font-size: 20px;
-    animation: ${spread2} 2s ease-in;
+    animation: ${spread2} 0.5s ease-in;
   `;
   const FileBtn = styled.button`
     background-color: #00ff80;
