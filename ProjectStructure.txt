@@ -1,0 +1,40 @@
+src
+|-- components
+| |-- Board
+| | |-- Board.tsx
+| | |-- Board.css
+| | |-- Board.test.tsx
+| | |-- BoardItem.tsx
+| |-- Form
+| | |-- Form.tsx
+| | |-- Form.css
+| | |-- Form.test.tsx
+| |-- Upload
+| | |-- Upload.tsx
+| | |-- Upload.css
+| | |-- Upload.test.tsx
+|-- pages
+| |-- Home
+| | |-- Home.tsx
+| | |-- Home.css
+| | |-- Home.test.tsx
+| |-- BoardDetail
+| | |-- BoardDetail.tsx
+| | |-- BoardDetail.css
+| | |-- BoardDetail.test.tsx
+| |-- BoardWrite
+| | |-- BoardWrite.tsx
+| | |-- BoardWrite.css
+| | |-- BoardWrite.test.tsx
+| |-- BoardModify
+| | |-- BoardModify.tsx
+| | |-- BoardModify.css
+| | |-- BoardModify.test.tsx
+|-- services
+| |-- api.ts
+| |-- types.ts
+|-- utils
+| |-- imageUtils.ts
+| |-- fileUtils.ts
+| |-- validationUtils.ts
+| |-- apiUtils.ts

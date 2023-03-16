@@ -1,105 +1,101 @@
-/* eslint-disable no-console */
-import React, { ChangeEventHandler, MouseEventHandler, useState } from 'react';
-import ContentWrapper from '../../components/common/ContentWrapper';
-import ContentBox from '../../components/common/ContentBox';
-import Dropdown from '../../components/common/Dropdown';
-import StudyDetail from './detail/StudyDetail';
-import { CardGrid, ClassificationDiv, SelectDiv, SelectTitle } from './Styled';
+import React, { useState, useEffect } from 'react';
+import { Link } from 'react-router-dom';
+import { getBoardList } from '../../services/api';
+import { BoardItem } from '../../components/Board/BoardItem';
+import { Board } from '../../services/types';
 
-const yearList = ['전체', '2020', '2021', '2022'];
-const fieldList = ['전체', 'Frontend', 'Backend', 'Infra', 'Algorithm'];
+function Home(): React.ReactElement {
+  const [boardList, setBoardList] = useState<Board[]>([]);
 
-function StudyContent(): React.ReactElement {
-  const [currentSelectYear, setCurrentSelectYear] = useState('');
-  const [currentSelectField, setCurrentSelectField] = useState('');
-  // const [clickedCard, setClickedCard] = useState('');
-  const [cardDetail, setCardDetail] = useState(<p> </p>);
-  const handleOnChangeYear: ChangeEventHandler<HTMLSelectElement> = (e) => {
-    const { target } = e;
-    console.log(currentSelectYear);
-    if (target.value === '전체') {
-      setCurrentSelectYear('');
-    } else {
-      setCurrentSelectYear(target.value);
+  useEffect(() => {
+    async function fetchData() {
+      const result = await getBoardList();
+      setBoardList(result.data);
     }
-  };
+    fetchData();
+  }, []);
 
-  const handleOnChangeField: ChangeEventHandler<HTMLSelectElement> = (e) => {
-    const { target } = e;
-    console.log(currentSelectField);
-    if (target.value === '전체') {
-      setCurrentSelectField('');
-    } else {
-      setCurrentSelectField(target.value);
-    }
-  };
-
-  const handleOnClickCard: MouseEventHandler<HTMLDivElement> = (e) => {
-    const { currentTarget } = e;
-    console.log(currentTarget);
-    setCardDetail(<StudyDetail />);
-    // router로 작동되는게 바람직할 것으로 보임.
-    // 글마다 글 id가 있어서 div에 할당했다가 클릭했을 때, id로 db 조회해서 세부 정보 얻어오는 방식으로 만들어야할 듯.
-  };
   return (
-    <ContentWrapper
-      title="스터디"
-      subTitle="분야 별로 튜터와 함께 성장해 나가요"
-    >
-      <>
-        <ClassificationDiv>
-          <SelectDiv>
-            <SelectTitle>년도 : </SelectTitle>
-            <Dropdown dropdownList={yearList} onChange={handleOnChangeYear} />
-            <SelectTitle>분야 : </SelectTitle>
-            <Dropdown dropdownList={fieldList} onChange={handleOnChangeField} />
-          </SelectDiv>
-        </ClassificationDiv>
-        {cardDetail}
-        <CardGrid>
-          <ContentBox
-            onClick={handleOnClickCard}
-            title="종만북 알고리즘 스터디"
-            imgsrc="../../components/common/image/bibim_logo.png"
-            week="1주차"
-            leader="조윤혁"
-            year="2022"
-            language={['python', 'C++', 'JAVA']}
-          >
-            <div>
-              <span>백준 9867</span>
-            </div>
-          </ContentBox>
-          <ContentBox
-            onClick={handleOnClickCard}
-            title="종만북 알고리즘 스터디"
-            imgsrc="../../components/common/image/bibim_logo.png"
-            week="1주차"
-            leader="조윤혁"
-            year="2022"
-            language={['python', 'C++', 'JAVA']}
-          >
-            <div>
-              <span>백준 9867</span>
-            </div>
-          </ContentBox>
-          <ContentBox
-            onClick={handleOnClickCard}
-            title="종만북 알고리즘 스터디"
-            imgsrc="../../components/common/image/bibim_logo.png"
-            week="1주차"
-            leader="조윤혁"
-            year="2022"
-            language={['python', 'C++', 'JAVA']}
-          >
-            <div>
-              <span>백준 9867</span>
-            </div>
-          </ContentBox>
-        </CardGrid>
-      </>
-    </ContentWrapper>
+    <div>
+      <h1>게시판</h1>
+      <Link to="/board/write">글쓰기</Link>
+      <ul>
+        {boardList.map((board) => (
+          <BoardItem board={board} key={board.id} />
+        ))}
+      </ul>
+    </div>
   );
 }
 
-export default StudyContent;
+export default Home;
+
+// /* eslint-disable no-console */
+// import React, { ChangeEventHandler, useState } from 'react';
+// import ContentWrapper from '../../components/common/ContentWrapper';
+// import CardList from './detail/CardList';
+// import Dropdown from '../../components/common/Dropdown';
+// import StudyDetail from './detail/StudyDetail';
+// import { CardGrid, ClassificationDiv, SelectDiv,
+// SelectTitle, WriteDiv, WriteBtn } from './Styled';
+
+// const yearList = ['전체', '2020', '2021', '2022'];
+// const fieldList = ['전체', 'Frontend', 'Backend', 'Infra', 'Algorithm'];
+
+// function StudyContent(): React.ReactElement {
+//   const [currentSelectYear, setCurrentSelectYear] = useState('');
+//   const [currentSelectField, setCurrentSelectField] = useState('');
+//   // const [clickedCard, setClickedCard] = useState('');
+//   // const [cardDetail, setCardDetail] = useState(<p> </p>);
+//   const handleOnChangeYear: ChangeEventHandler<HTMLSelectElement> = (e) => {
+//     const { target } = e;
+//     console.log(currentSelectYear);
+//     if (target.value === '전체') {
+//       setCurrentSelectYear('');
+//     } else {
+//       setCurrentSelectYear(target.value);
+//     }
+//   };
+
+//   const handleOnChangeField: ChangeEventHandler<HTMLSelectElement> = (e) => {
+//     const { target } = e;
+//     console.log(currentSelectField);
+//     if (target.value === '전체') {
+//       setCurrentSelectField('');
+//     } else {
+//       setCurrentSelectField(target.value);
+//     }
+//   };
+
+//   // const handleOnClickCard: MouseEventHandler<HTMLDivElement> = (e) => {
+//   //   const { currentTarget } = e;
+//   //   console.log(currentTarget);
+//   //   setCardDetail(<StudyDetail />);
+//   //   // router로 작동되는게 바람직할 것으로 보임.
+//   //   // 글마다 글 id가 있어서 div에 할당했다가 클릭했을 때, id로 db 조회해서 세부 정보 얻어오는 방식으로 만들어야할 듯.
+//   // };
+//   return (
+//     <ContentWrapper
+//       title="스터디"
+//       subTitle="분야 별로 튜터와 함께 성장해 나가요"
+//     >
+//       <>
+//         <ClassificationDiv>
+//           <SelectDiv>
+//             <SelectTitle>년도 : </SelectTitle>
+//             <Dropdown dropdownList={yearList} onChange={handleOnChangeYear} />
+//             <SelectTitle>분야 : </SelectTitle>
+//             <Dropdown dropdownList={fieldList} onChange={handleOnChangeField} />
+//           </SelectDiv>
+//           <WriteDiv><WriteBtn>글쓰기</WriteBtn></WriteDiv>
+//         </ClassificationDiv>
+//         <StudyDetail />
+//         <CardGrid>
+//           <CardList />
+//         </CardGrid>
+//       </>
+//     </ContentWrapper>
+//   );
+// }
+
+// export default StudyContent;
