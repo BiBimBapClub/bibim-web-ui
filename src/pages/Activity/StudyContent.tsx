@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { getBoardList } from '../../services/api';
@@ -26,7 +25,7 @@ function Home(): React.ReactElement {
         ))}
       </ul>
     </div>
-);
+  );
 }
 
 export default Home;
