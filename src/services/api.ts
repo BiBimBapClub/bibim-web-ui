@@ -1,22 +1,57 @@
-import { StudyPost } from '../interfaces/StudyPost';
+import axios from 'axios';
+import { BoardType, BoardListType, PostType } from './types';
 
-const API_BASE_URL = 'http://localhost:8080/api';
+const BASE_URL = 'http://localhost:8080/api';
 
-async function getPosts(): Promise<StudyPost[]> {
-  const response = await fetch(`${API_BASE_URL}/posts`);
-  const posts = await response.json();
-  return posts;
-}
+const axiosInstance = axios.create({
+  baseURL: BASE_URL,
+});
 
-async function createPost(post: StudyPost): Promise<StudyPost> {
-  const response = await fetch(`${API_BASE_URL}/posts`, {
-    method: 'POST',
-    headers: { 'Content-Type': 'application/json' },
-    body: JSON.stringify(post),
-  });
-  const createdPost = await response.json();
-  return createdPost;
-}
+export const getBoardList = function () {
+  return axiosInstance.get('/board');
+};
 
-// eslint-disable-next-line import/prefer-default-export
-export const api = { getPosts, createPost };
+export const getBoardDetail = function (id: number) {
+  return axiosInstance.get(`/board/${id}`);
+};
+
+export const createBoard = function (data: any) {
+  return axiosInstance.post('/board', data);
+};
+
+export const updateBoard = function (id: number, data: any) {
+  return axiosInstance.put(`/board/${id}`, data);
+};
+
+export const deleteBoard = function (id: number) {
+  return axiosInstance.delete(`/board/${id}`);
+};
+export const fetchBoardList = async (): Promise<BoardListType> => {
+  const response = await axios.get(`${BASE_URL}/boards`);
+  return response.data;
+};
+
+export const fetchBoard = async (id: number): Promise<BoardType> => {
+  const response = await axios.get(`${BASE_URL}/boards/${id}`);
+  return response.data;
+};
+
+export const createPost = async (
+  boardId: number,
+  post: PostType,
+): Promise<PostType> => {
+  const response = await axios.post(`${BASE_URL}/boards/${boardId}/posts`, post);
+  return response.data;
+};
+
+export const updatePost = async (boardId: number,
+  postId: number,
+  post: PostType,
+): Promise<PostType> => {
+  const response = await axios.patch(`${BASE_URL}/boards/${boardId}/posts/${postId}`, post);
+  return response.data;
+};
+
+export const deletePost = async (boardId: number, postId: number): Promise<void> => {
+  await axios.delete(`${BASE_URL}/boards/${boardId}/posts/${postId}`);
+};

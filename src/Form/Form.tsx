@@ -1,13 +1,24 @@
 import React, { useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import { createBoard } from '../../services/api';
-import { validateBoardForm } from '../../utils/validationUtils';
-import { BoardFormData } from '../../services/types';
+import { createBoard } from '../services/api';
+import { validateBoardForm } from '../Utils/validationUtils';
+import { BoardFormData } from '../services/types';
 import { FormWrapper, FormTitle, FormInput, FormTextarea, FormSubmitButton } from './Form.styles';
 
-const Form = function () {
+const Form = function (
+  title:string,
+  content:string,
+  image:File,
+  onPostIdChange,
+  onTitleChange,
+  onContentChange,
+  onImageChange,
+) {
   const history = useHistory();
-
+  const titleF = title;
+  const contentF = content;
+  const ImageF = image;
+  
   const [formData, setFormData] = useState<BoardFormData>({
     title: '',
     content: '',
